@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;1,300;1,700&display=swap');
+
+body{
+    font-family: 'Quicksand', sans-serif;
+    height: 100%;
+    background-color: #DFE4EA;
+}
+
+.buttonHeader {
+    border-color: #F0572D;
+    color: #F0572D;
+    height: 40px;
+    width: 206px;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    position: sticky;
+    margin-left: 40px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.imgHeader{
+    margin-left: 40px;
+}
+
+.divButton{
+    margin-right: 40px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.footer {
+    height: 58px;
+    width: 100%;
+    background-color: #F0572D;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    
+}
+
+.socialFooter {
+    margin-right: 2rem;
+}
+
+.digitalBooking {
+    margin: 0;
+    padding-top: 0.7rem;   
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+  }
+
