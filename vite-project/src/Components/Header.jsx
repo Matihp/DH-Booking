@@ -1,13 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import logoHeader from '../../public/img/logoHeader.png'
+import logoHeader from '../img/logoHeader.png'
 import '../Style/Home.css'
 
 const Header = () => {
   return (
     <div className='header'>
       <Link to = {"/"} > <img className='imgHeader' alt="LogoHeader" src={logoHeader}/> </Link>
-
       <div className='divButton'>
         <button className='buttonHeader'>Crear Cuenta</button>
         <button className='buttonHeader'>Iniciar Sesion</button>

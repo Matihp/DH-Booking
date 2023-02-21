@@ -2,19 +2,17 @@ import { useState } from 'react'
 import Footer from './Components/Footer'
 import Header from './Components/Header'
 import Body from './Components/Body'
+import Navbar from './Components/Navbar'
 
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
 
     <div className="App">
-    
-    <Header/>
-    <Body/>
-    <Footer/>
-
+      <Header />
+      <Navbar />
+      <Body />
+      <Footer />
     </div>
   )
 }
