@@ -1,1 +1,1 @@
-EQUIPO 8
+GRUPO 8
