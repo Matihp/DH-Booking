@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+.headerText{
+    color: #191B1D;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+}
+
+.divContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header{
+    position: sticky;
+    top:0;
+    background-color: white;
+}

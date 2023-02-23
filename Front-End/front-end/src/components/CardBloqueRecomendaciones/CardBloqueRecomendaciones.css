@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+}
+.bloqueRecomendaciones{
+   width: 840px;
+   height: 280px;
+   display: flex;
+   justify-self: center;
+   margin-top: 20px;
+   gap: 30px;
+   border-radius: 6px;
+   box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.251);
+}
+.imagenRecomendaciones{
+    height: 100%;
+    width: 420px;
+    border-radius: 3px;
+}
+.categoriaSpan{
+    color: #191b1d;
+}
+.tituloSpan{
+    color: #191b1d;
+    font-weight: 700;
+}
+.ubicacionP{
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+}
+.div{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.buttonNav{
+    width: 90%;
+    background-color: #f0572d;
+    color:#dfe4ea;
+}
