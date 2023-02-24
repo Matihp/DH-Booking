@@ -5,7 +5,7 @@ import './Footer.css'
 const Footer = () => {
   return (
     <div className='footer'>
-        <p>©2023 Digital Booking</p>  
+        <p className='pFooter'>©2023 Digital Booking</p>  
         <Logos/>
     </div>
   )

@@ -15,16 +15,12 @@ const CardBloqueRecomendaciones = ({ recomendaciones }) => {
                     <h1 className='tituloSpan'>{recomendaciones.titulo}</h1>
                     <p className='ubicacionP'>{recomendaciones.ubicacion}</p>
                     <div>
-                        <span><img src={iconNatacion}></img> <img src={iconWifi}></img></span>
-                        
+                        <span><img src={iconNatacion}></img> <img src={iconWifi}></img></span> 
                     </div>
                 </div>
-
-                
                 <p className='ubicacionP'>{recomendaciones.descripcion}</p>
                 <button className='buttonNav'>Ver más</button>
             </div>
-
         </div>
     )
 }

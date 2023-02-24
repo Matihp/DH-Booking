@@ -11,7 +11,7 @@ const Header = () => {
             <div className='divContainer'>
                 <Link className='flex' to={"/"} style={{textDecoration:"none"}} >
                     <img className='logo' src={logo} alt="logo"/>
-                    <span className='headerText'>Sentite como en tu hogar</span>
+                    <p className='headerText'>Sentite como en tu hogar</p>
                 </Link>
                 <Sesion/>
             </div>

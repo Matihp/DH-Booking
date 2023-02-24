@@ -1,12 +1,12 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './Sesion.css'
 
 const Sesion = () => {
   return (
     <div>
-        <button>Crear cuenta</button>
-        <button>Iniciar sesión</button>
+      <Link to={'/signup'}><button>Crear cuenta</button></Link>
+      <Link to={'/login'}><button>Iniciar sesión</button></Link>
     </div>
   )
 }

@@ -4,8 +4,9 @@
     font-family: 'Quicksand', sans-serif;
 }
 .bloqueRecomendaciones{
-   width: 840px;
-   height: 280px;
+   /* width: 840px;
+   height: 280px; */
+   width: 48vw;
    display: flex;
    justify-self: center;
    margin-top: 20px;

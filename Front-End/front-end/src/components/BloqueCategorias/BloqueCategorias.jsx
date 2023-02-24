@@ -5,15 +5,18 @@ import './BloqueCategorias.css'
 
 const BloqueCategorias = () => {
     return (
-        <div className='body'>
+        <div className='hola'>
             <span>
-                <h2 style={{ marginLeft: "30px" }}>Buscar tipo de alojamiento</h2>
+                <h2 style={{ marginLeft: "20px",padding:'10px' }}>Buscar por tipo de alojamiento</h2>
             </span>
-            <div className='divCategorias'>
+            <div className='containerCategorias'>
+                <div className='divCategorias'>
                 {
                     categorias?.map(categorias => <CardBloqueCategorias key={categorias.id} categorias={categorias} />)
                 }
+                 </div>
             </div>
+            
 
         </div>
     )

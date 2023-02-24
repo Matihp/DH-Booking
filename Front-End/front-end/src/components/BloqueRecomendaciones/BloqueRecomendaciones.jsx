@@ -5,7 +5,7 @@ import './BloqueRecomendaciones.css'
 const BloqueRecomendaciones = () => {
   return (
     <div>
-    <h2 style={{ marginLeft: "30px", }}>Recomendaciones</h2>
+    <h2 style={{ marginLeft: "30px",marginTop:'20px' }}>Recomendaciones</h2>
     <div className='contenedorRecomendaciones'>
       <div className='divRecomendaciones'>
         {

@@ -1,0 +1,41 @@
+.containerSignup{
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.formSignup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.inputSignup{
+    height: 40px;
+    width: 450px;
+    border: none;
+    box-shadow: 2px 2px 2px 2px #47474740;
+    border-radius: 6px;
+    
+}
+.inpt{
+    width: 40vw;
+    
+}
+.flexSignup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.inptNombre{
+    width: 19vw;
+}
+.nombre{
+    gap: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+

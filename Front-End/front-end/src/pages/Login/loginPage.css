@@ -4,6 +4,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
 }
 .formLogin{
     display: flex;
@@ -24,4 +25,5 @@
 .divLogin{
     display: flex;
     justify-content: center;
+    
 }
