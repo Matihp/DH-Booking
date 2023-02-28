@@ -1,3 +1,4 @@
+
 button{
     border-color: #F0572D;
     color: #F0572D;
@@ -8,4 +9,27 @@ button{
     border-radius: 5px;
     padding: 10px;
     margin: 5px;
+}
+.divSesion{
+    width: 38vw;
+}
+.logoSesion{
+    display: none;
+}
+@media (max-width: 768px) {
+    .divSesion{
+        width: 160vw;
+    }
+    .logoSesion{
+        display: none;
+    }
+}
+@media (max-width: 480px) {
+    .divSesion{
+        display: none;
+    }
+    .logoSesion{
+        display: block;
+        
+    }
 }
