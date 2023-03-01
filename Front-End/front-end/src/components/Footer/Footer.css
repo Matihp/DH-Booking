@@ -15,3 +15,8 @@ p{
 .pFooter{
     margin-left: 40px;
 }
+@media (max-width: 480px) {
+    .footer{
+        width: 159vw;
+    }
+}

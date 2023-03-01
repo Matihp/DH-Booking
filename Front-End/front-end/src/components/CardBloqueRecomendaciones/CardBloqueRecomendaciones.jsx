@@ -9,7 +9,7 @@ const CardBloqueRecomendaciones = ({ recomendaciones }) => {
             <div >
                 <img className='imagenRecomendaciones' src={recomendaciones.url} alt="imagen" />
             </div>
-            <div className='div'>
+            <div className='divCardRecomendaciones'>
                 <div>
                     <p className='categoriaSpan'>{recomendaciones.categoria.toUpperCase()}</p>
                     <h1 className='tituloSpan'>{recomendaciones.titulo}</h1>

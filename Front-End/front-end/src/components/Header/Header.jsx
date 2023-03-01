@@ -7,7 +7,7 @@ import Sesion from '../Sesion/Sesion'
 const Header = () => {
   return (
     <div className='header'>
-        <header >
+        <header>
             <div className='divContainer'>
                 <Link className='flex' to={"/"} style={{textDecoration:"none"}} >
                     <img className='logo' src={logo} alt="logo"/>

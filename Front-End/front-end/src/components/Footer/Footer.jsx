@@ -4,10 +4,10 @@ import './Footer.css'
 
 const Footer = () => {
   return (
-    <div className='footer'>
+    <footer className='footer'>
         <p className='pFooter'>©2023 Digital Booking</p>  
         <Logos/>
-    </div>
+    </footer>
   )
 }
 

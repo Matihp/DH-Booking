@@ -23,4 +23,44 @@
     height: 45px;
     border-radius: 5px;
     color: white;
+    margin-left: 10px;
 }
+.rmdp-input{
+    width: 390px;
+    /* Este es el datePicker */
+}
+@media (max-width: 768px) {
+    .navBar{
+        width: 101vw;
+    }
+    .selectNavBar {
+        width: 30vw;
+    }
+    .rmdp-input{
+        width: 30vw;
+    }
+  }
+  @media (max-width: 480px) {
+    .selectNavBar {
+        width: 140vw;
+    }
+    .rmdp-input{
+        width: 137vw;
+    }
+    .navBar{
+        display: flex;
+        width: 159vw;
+        height: 30vh;
+    }
+    .formNavbar{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .h1Navbar{
+        font-size: 28px;
+    }
+    .buttonNavBar{
+        margin-left: 0px;
+    }
+  }
