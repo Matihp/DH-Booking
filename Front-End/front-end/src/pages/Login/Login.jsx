@@ -16,7 +16,7 @@ const Login = () => {
         <input className='inputLogin' type="text" required/>
        
         <label>Contraseña</label>
-        <input className='inputLogin' type="text" required/>
+        <input className='inputLogin' type="password" required/>
         <div className='divLogin'>
           <button>Ingresar</button>
         </div>

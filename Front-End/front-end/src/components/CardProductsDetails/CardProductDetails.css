@@ -1,0 +1,156 @@
+
+.containerProductName{
+    background-color: rgb(88, 88, 88);
+    color: white;
+    padding: 10px 28px 10px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flechaProduct{
+    width: 3vw;
+    height: 5vh;
+}
+.divProductDetails{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eeeef1;
+    padding: 10px 30px 10px 25px;
+}
+.divProductDetails_City{
+    display: flex;
+    font-weight:700;
+}
+.divProductDetails_Star{
+   display: flex;
+   justify-content: space-between;
+   align-items: start;
+   width: 9vw;
+}
+.svgDetailProduct{
+    padding-left: 20px;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+}
+.spanDetails{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+.divImagesDetails{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.imgPrincipalDetails{
+    padding: 10px;
+    width: 40vw;
+    border-radius: 15px;
+}
+.imgColumnas{
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    justify-self: center;
+    width: 55vw;
+}
+.imgSecundariaDetails{
+    width: 27vw;
+    height: 27vh;
+    border-radius: 15px;
+    padding: 5px;
+}
+.linkDetailCarousel{
+    position: absolute;
+    color: rgb(255, 255, 255);
+    border: none;
+    font-weight: bold;
+    word-spacing: -1px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 15px;
+    top:105vh;
+    right: 3vw;
+    width: 10vw;
+}
+.slider{
+    position: absolute;
+    top: 40vh;
+    z-index: 20;
+}
+.svgCloseSlider{
+    position: absolute;
+    bottom: 55vh;
+    left: 75vw;
+    background-color: rgb(255, 255, 255);
+    z-index: 10;
+    border-radius: 15px;
+}
+hr{
+    border-color: #F0572D;
+}
+.productServices{
+    margin: 30px 0px 0px 20px;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+    justify-items: space-between;
+    height: 15vh;
+    font-weight: 600;
+}
+.containerProductTerms{
+    /* display: grid;
+    grid-template-columns: 2fr 2fr;
+    margin: 30px 0px 0px 20px;
+    justify-items:space-between; */
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+    margin:30px 0px 0px 20px;
+}
+.productTerms{
+    /* width: 30vw;
+    height: 13vh; */
+    width: 25vw;
+}
+.containerProductCalendar{
+    background-color: #eeeef1;
+    padding-bottom: 40px;
+}
+.productCalendar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.rmdp-calendar{
+    width: 60vw;
+}
+.rmdp-day-picker {
+    display: flex;
+    justify-content: space-around;
+}
+.rmdp-week, .rmdp-ym{
+    width: 26vw;
+}
+.rmdp-day span{
+    font-weight: 600;
+}
+.rmdp-header-values{
+    font-weight: 600;
+}
+.productReserve{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    height: 14vh;
+    width: 31vw;
+    padding: 15px;
+    box-shadow: 0px 8px 8px 0px rgb(0 0 0 / 25%);
+}
+.btnProduct{
+    background-color: #F0572D;
+    color: white;
+}

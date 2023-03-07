@@ -8,7 +8,7 @@ import Layout from './components/Layout';
 import Navbar from './components/Navbar/Navbar';
 import Login from './pages/Login/login';
 import Signup from './pages/Signup/signup';
-
+import ProductDetails from './pages/Product/ProductDetails';
 const App = () => {
   return (
     <div>
@@ -17,6 +17,7 @@ const App = () => {
         <Route path="/" element={<Layout/>}/>
         <Route path="/login" element={<Login/>} />
         <Route path="/signup" element={<Signup/>} />
+        <Route path='/details'element={<ProductDetails/>}/>
       </Routes>
       <Footer/>
     </div>

@@ -22,11 +22,11 @@ const Signup = () => {
         </div>
         <div className='flexSignup'>
           <label>Contraseña</label>
-        <input className='inputSignup inpt' type="text" required/>
+        <input className='inputSignup inpt' type="password" pattern=".{6,}" required/>
           </div>  
         <div className='flexSignup'>
           <label>Confirmar contraseña</label>
-        <input className='inputSignup inpt' type="text" required/>
+        <input className='inputSignup inpt'  pattern=".{6,}" required/>
           </div>      
         <div>
           <button className='buttonSignup'>Ingresar</button>
