@@ -7,7 +7,6 @@
     width: 60vw;
     height: 60vh;
   }
-  
   .swiper-slide {
     display: flex;
     justify-content: center;
@@ -61,4 +60,33 @@
     stroke-dasharray: 125.6;
     transform: rotate(-90deg);
   }
-  
+  @media (max-width: 768px) {
+    .containerSlider{
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-content:start;
+      width: 100vw;
+    }
+    .swiper {
+      width: 100vw;
+      height: 60vh;
+      
+    }
+    .swiper-slide img {
+      width: 101vw;
+      height: 60vh;
+      object-fit: cover;
+      border-radius: 0px;
+    }
+    .swiper-button-next{
+      display: none;
+    }
+  }
+  @media (max-width: 480px) {
+    .swiper {
+      width: 159vw;
+    }
+    .swiper-slide img {
+      width: 159vw;
+    }
+  }

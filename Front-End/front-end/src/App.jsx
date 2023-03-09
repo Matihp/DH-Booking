@@ -12,7 +12,6 @@ import ProductDetails from './pages/Product/ProductDetails';
 const App = () => {
   return (
     <div>
-      <Header/>
       <Routes>
         <Route path="/" element={<Layout/>}/>
         <Route path="/login" element={<Login/>} />

@@ -1,29 +1,80 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import Signup from '../Signup/signup'
-import './loginPage.css'
+import React, { useState } from "react";
+import Input from "../../components/Actions/useInput";
+import './login.css';
+import { Link } from "react-router-dom";
+import Header from "../../components/Header/Header";
 
 const Login = () => {
-  function handleSubmit(e){
-    e.preventDefault()
+
+  const [email, setEmail] = useState({ value: "", valid: null });
+  const [password, setPassword] = useState({ value: "", valid: null });
+
+  const [isFormValid, setIsFormValid] = useState(null);
+  const [msgError, setMsgError] = useState("");
+
+  const regularExpressions = {
+    email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+    password: /^.{7,30}$/,
   }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsFormValid(true);
+  }
+
   return (
-    <div className='containerLogin'>
-      <h1 style={{ color: '#f0572b', marginBottom: '20px', fontWeight:"bold" }}>Iniciar sesión</h1>
-      <form className='formLogin'onSubmit={handleSubmit}>
-      
-        <label className='labelLogin'>Correo electronico</label>
-        <input className='inputLogin' type="text" required/>
-       
-        <label>Contraseña</label>
-        <input className='inputLogin' type="password" required/>
-        <div className='divLogin'>
-          <button>Ingresar</button>
+    <>
+    <Header onChange={'login'}/>
+    <div className='containerFormLogin'>
+      <form className='formSignup'  onSubmit={handleSubmit}>
+        <h1 style={{ color: '#f0572b', marginBottom: '30px', fontWeight:"bold" }}>Iniciar Sesión</h1>
+        <div>
+          <Input
+            state={email}
+            changeState={setEmail}
+            label="Correo electrónico"
+            type="email"
+            id="email"
+            name="email"
+            error="Ingrese un correo electronico valido"
+            regex={regularExpressions.email}
+          />
+          <Input
+            state={password}
+            changeState={setPassword}
+            label="Contraseña"
+            type="password"
+            id="password"
+            name="password"
+            error="La contraseña debe tener entre 7 y 30 caracteres"
+            regex={regularExpressions.password}
+          />
+          {isFormValid === false && (
+            <p className='msgErrorForm'>
+              {msgError
+                ? msgError
+                : "Por favor vuelva a intentarlo, sus credenciales son inválidas."}
+            </p>
+          )}
+          <div className='containerBtnSignup'>
+            <Link to='/' >
+              <button type="submit" >
+                Ingresar
+              </button>
+            </Link>   
+            <p className='linkContainer' style={{color:'black'}}>
+              ¿Aún no tenés cuenta?{" "}
+              <Link to="/signup"className='linkAction'>
+                Registrate
+              </Link>
+            </p>
+          </div>
+          
         </div>
       </form>
-      <p style={{ color: '#31363F', fontSize:"16px" }}>Aun no tienes cuenta? <Link to={'/signup'} style={{ textDecoration: 'none', color: '#f0572b', fontSize:"16px" }}> Registrate</Link></p>
     </div>
+    </>
   )
 }
 
-export default Login
+export default Login;

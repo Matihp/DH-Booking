@@ -1,39 +1,177 @@
-import React from 'react'
-import './signup.css'
-import { Link } from 'react-router-dom'
+import React, { useContext, useState } from 'react';
+import Input from '../../components/Actions/useInput';
+import './signup.css';
+import { Link } from 'react-router-dom';
+import Header from '../../components/Header/Header';
 
 const Signup = () => {
-  function handleSubmit(e){
-    e.preventDefault()
-  }
+  const [name, setName] = useState({ value: '', valid: null });
+  const [lastName, setLastName] = useState({ value: '', valid: null });
+  const [email, setEmail] = useState({ value: '', valid: null });
+  const [password, setPassword] = useState({ value: '', valid: null });
+  const [password2, setPassword2] = useState({ value: '', valid: null });
+
+  const [isValid, setisValid] = useState(null);
+  const [msgError, setMsgError] = useState('');
+
+  const regularExpressions = {
+    nameAndLastName: /^[a-zA-ZÀ-ÿ\s]{4,40}$/, 
+    email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+    password: /^.{7,30}$/, // 
+  };
+
+  const handleSubmit = async (e) => {
+      e.preventDefault()
+      validateInputs()
+      setisValid(true)
+    }
+
+  const handleForm = () => {
   return (
-    <div className='containerSignup'>
-      <h1 style={{ color: '#f0572b', marginBottom: '20px', fontWeight: "bold" }}>Crear cuenta</h1>
-      <form className='formSignup'onSubmit={handleSubmit}>
-        <div className='flexSign'>
-            <label className='nombre' >Nombre</label>
-            <input className='inputSignup inptNombre' type="text"required />
-            <label className='nombre'>Apellido</label>  
-            <input className='inputSignup inptNombre' type="text"required />
-        </div>
-        <div className='flexSignup'>
-          <label>Correo Electronico</label>
-        <input className='inputSignup inpt' type="text"required />
-        </div>
-        <div className='flexSignup'>
-          <label>Contraseña</label>
-        <input className='inputSignup inpt' type="password" pattern=".{6,}" required/>
-          </div>  
-        <div className='flexSignup'>
-          <label>Confirmar contraseña</label>
-        <input className='inputSignup inpt'  pattern=".{6,}" required/>
-          </div>      
-        <div>
-          <button className='buttonSignup'>Ingresar</button>
-        </div>
-      </form>
+    name.valid === 'true' &&
+    lastName.valid === 'true' &&
+    email.valid === 'true' &&
+    password.valid === 'true' &&
+    password2.valid === 'true'
+    )
+  }
+  const validateInputs = () => {
+      if (name.value === '') {
+        setName((prevState) => {
+          return { ...prevState, valid: 'false' }
+        })
+      }
+      if (lastName.value === '') {
+        setLastName((prevState) => {
+          return { ...prevState, valid: 'false' }
+        })
+      }
+      if (email.value === '') {
+        setEmail((prevState) => {
+          return { ...prevState, valid: 'false' }
+        })
+      }
+      if (password.value === '') {
+        setPassword((prevState) => {
+          return { ...prevState, valid: 'false' }
+        })
+      }
+      if (password2.value === '') {
+        setPassword2((prevState) => {
+          return { ...prevState, valid: 'false' }
+        })
+      }
+    }
+
+  const validatePassword = () => {
+    if (password.value.length > 0) {
+      if (password.value !== password2.value) {
+        setPassword2((prevState) => {
+          return { ...prevState, valid: 'false' }
+        })
+      } else if (password.valid === 'false') {
+        setPassword2((prevState) => {
+          return { ...prevState, valid: 'false' }
+        })
+      } else {
+        setPassword2((prevState) => {
+          return { ...prevState, valid: 'true' }
+        })
+      }
+    } else if (password.value === '') {
+      setPassword2((prevState) => {
+        return { ...prevState, valid: 'false' }
+      })
+    }
+  }
+
+  return (
+    <>
+    <Header onChange={'signup'}/>
+    <div className='containerForm' >
+        <form
+          className='formSignup'
+          onSubmit={handleSubmit}
+          onChange={handleForm}
+        >
+          <h1 style={{ color: '#f0572b', marginBottom: '30px', fontWeight:"bold" }} >Crear cuenta</h1>
+          <div>
+            <div className='containerInputSignup'>
+              <Input
+                state={name}
+                changeState={setName}
+                label="Nombre"
+                type="text"
+                id="name"
+                name="name"
+                error="Sólo se permiten letras"
+                regex={regularExpressions.nameAndLastName}
+              />
+              <Input
+                state={lastName}
+                changeState={setLastName}
+                label="Apellido"
+                type="text"
+                id="lastName"
+                name="lastName"
+                error="Sólo se permiten letras"
+                regex={regularExpressions.nameAndLastName}
+              />
+            </div>
+            <Input
+              state={email}
+              changeState={setEmail}
+              label="Correo electrónico"
+              type="email"
+              id="email"
+              name="email"
+              error="Correo electrónico incorrecto"
+              regex={regularExpressions.email}
+            />
+            <Input
+              state={password}
+              changeState={setPassword}
+              label="Contraseña"
+              type="password"
+              id="password"
+              name="password"
+              error="La contraseña debe tener entre 7 y 30 caracteres"
+              regex={regularExpressions.password}
+            />
+            <Input
+              state={password2}
+              changeState={setPassword2}
+              label="Confirmar contraseña"
+              type="password"
+              id="password2"
+              name="password2"
+              error="Las contraseñas deben ser iguales"
+              regex={regularExpressions.password}
+              executeFunction={validatePassword}
+            />
+            {isValid === false && (
+              <p className='msgErrorForm' >
+                {msgError
+                  ? msgError
+                  : 'Por favor vuelva a intentarlo, algunos de los datos ingresados no son correctos.'}
+              </p>
+            )}
+            <div className='containerBtnSignup'>
+                <button type="submit">
+                Crear cuenta
+              </button>
+              <p className='linkContainer'>
+                ¿Ya tienes una cuenta?{' '}
+                <Link className='linkAction' to="/login">
+                  Iniciar sesión
+                </Link>
+              </p>
+            </div>
+          </div>
+        </form>
     </div>
+    </>
   )
 }
 
-export default Signup
+export default Signup;

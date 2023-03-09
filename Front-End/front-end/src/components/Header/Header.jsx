@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from '../../img/logo.png'
 import {Link} from 'react-router-dom'
 import './Header.css'
 import Sesion from '../Sesion/Sesion'
 
-const Header = () => {
+const Header = ({onChange}) => {
   return (
     <div className='header'>
         <header>
@@ -13,7 +13,7 @@ const Header = () => {
                     <img className='logo' src={logo} alt="logo"/>
                     <p className='headerText'>Sentite como en tu hogar</p>
                 </Link>
-                <Sesion/>
+                <Sesion onChange={onChange}/>
             </div>
         </header>
     </div>

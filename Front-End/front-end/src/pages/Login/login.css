@@ -1,8 +1,7 @@
-.containerForm {
+.containerFormLogin {
     height: 75vh;
     display: flex;
-    align-items: start;
-    justify-content: center;
+    flex-direction: column;
   }
   .msgLoginBookingError svg {
     width: 31px;
@@ -14,6 +13,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 32px 0;
     margin-bottom: 35px;
   }
@@ -38,17 +38,13 @@
   }
   
   .linkContainer {
-    font-weight: 500;
-    font-size: 16px;
-    margin-top: 7px;
-    text-align: center;
     color: black;
-  }
-  
+    font-size: 16px;
+    margin-top: 7px; 
+  } 
   .linkAction {
     color:#f0572b;
   }
-  
   .msgErrorInvalidForm {
     width: 448px;
   }
@@ -74,5 +70,3 @@
       margin-top: 20px; /* 55px*/
     }
   }
-  
-  

@@ -8,6 +8,7 @@ import Navbar from './Navbar/Navbar'
 const Layout = () => {
   return (
     <>
+      <Header onChange={'home'}/>
       <Navbar />
       <BloqueCategorias />
       <BloqueRecomendaciones/>
