@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Input from "../../components/Actions/useInput";
 import './login.css';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
+import { useGlobalStates } from "../../context/GlobalContext";
 
 const Login = () => {
 
@@ -16,10 +17,19 @@ const Login = () => {
     email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
     password: /^.{7,30}$/,
   }
+  const navigate=useNavigate();
+
+  const {setData}=useGlobalStates()
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsFormValid(true);
+
+    if (email.valid === 'true' && password.valid === 'true') {
+      setData(true)
+      navigate('/')
+    }
+      
   }
 
   return (
@@ -57,11 +67,10 @@ const Login = () => {
             </p>
           )}
           <div className='containerBtnSignup'>
-            <Link to='/' >
+            
               <button type="submit" >
                 Ingresar
-              </button>
-            </Link>   
+              </button> 
             <p className='linkContainer' style={{color:'black'}}>
               ¿Aún no tenés cuenta?{" "}
               <Link to="/signup"className='linkAction'>

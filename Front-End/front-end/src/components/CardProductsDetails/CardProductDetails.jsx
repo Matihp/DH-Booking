@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./CardProductDetails.css";
 import imgFlecha from "../../img/flecha-izquierda.png";
 import logoGps from "../../img/logo-gps.png";
 import { Link } from "react-router-dom";
 import ProductSlider from "../ProductSlider/ProductSlider";
 import { Calendar } from "react-multi-date-picker";
+
+
 const CardProductDetails = () => {
   const [slider, setSlider] = useState(false);
   const [value, setValue] = useState([])
@@ -16,6 +18,10 @@ const CardProductDetails = () => {
   const handleClick = () => {
     setSlider(!slider);
   };
+
+
+  
+
   return (
     <div className='containerProductDetails'>
       <div className="containerProductName" style={{opacity: slider ? '0.3' : ''}}>

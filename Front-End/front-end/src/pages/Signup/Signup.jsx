@@ -20,10 +20,14 @@ const Signup = () => {
     password: /^.{7,30}$/, // 
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
       e.preventDefault()
       validateInputs()
       setisValid(true)
+      if(email.valid == null && password.valid == 'true'
+      && lastName.valid == null && name.valid == 'true' && password2.valid == 'true'){
+        alert(name.value+' '+lastName.value+',tu registro con el correo '+email.value+' ha sido exitoso ')
+      }     
     }
 
   const handleForm = () => {
