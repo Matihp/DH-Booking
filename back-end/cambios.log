@@ -1,0 +1,206 @@
+[2023-03-09 15:29:24] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 15:29:24] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 15:29:26] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 15:29:26] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 15:29:53] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 7
+[2023-03-09 15:29:54] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 7
+[2023-03-09 15:30:45] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 15:30:45] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 15:30:46] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 15:30:46] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 15:31:08] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 15:31:08] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 15:31:10] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 15:31:10] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 15:35:32] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 15:35:32] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 15:35:33] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 15:35:34] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 15:36:08] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 15:36:08] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 15:36:09] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 15:36:09] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 15:38:42] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 8
+[2023-03-09 15:38:43] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 8
+[2023-03-09 15:38:52] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 15:38:52] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 15:38:53] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 15:38:53] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 15:38:59] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 15:38:59] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 15:39:00] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 15:39:00] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 15:39:38] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 15:39:38] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 15:39:39] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 15:39:39] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 15:39:56] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 15:39:56] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 15:39:57] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 15:39:57] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 15:41:13] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 15:41:13] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 15:41:14] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 15:41:15] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 15:42:10] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 4
+[2023-03-09 15:42:12] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 4
+[2023-03-09 15:42:48] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 4
+[2023-03-09 15:42:50] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 4
+[2023-03-09 15:43:24] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 4
+[2023-03-09 15:43:26] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 4
+[2023-03-09 15:43:51] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 15:43:51] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 15:43:53] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 15:43:53] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 15:46:00] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 15:46:00] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 15:46:01] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 15:46:01] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 15:48:01] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 15:48:01] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 15:48:02] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 15:48:02] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 15:50:29] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 4
+[2023-03-09 15:50:30] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 4
+[2023-03-09 15:55:31] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 4
+[2023-03-09 15:55:32] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 4
+[2023-03-09 15:55:38] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 7
+[2023-03-09 15:55:39] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 7
+[2023-03-09 15:59:35] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 15:59:35] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 15:59:37] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 15:59:37] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:00:21] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:00:21] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:00:23] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:00:23] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:00:42] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:00:42] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:00:44] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:00:44] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:02:07] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 2
+[2023-03-09 16:02:09] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 2
+[2023-03-09 16:02:21] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:02:21] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:02:23] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:02:23] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:03:06] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:03:06] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:03:07] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:03:07] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:04:34] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 6
+[2023-03-09 16:04:36] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 6
+[2023-03-09 16:05:17] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:05:17] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:05:18] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:05:18] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:05:43] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 4
+[2023-03-09 16:05:45] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 4
+[2023-03-09 16:06:10] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:06:10] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:06:11] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:06:11] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:06:49] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 4
+[2023-03-09 16:06:51] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 4
+[2023-03-09 16:10:02] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:10:02] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:10:04] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:10:04] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:10:18] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 5
+[2023-03-09 16:10:20] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 5
+[2023-03-09 16:15:01] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:15:01] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:15:03] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:15:03] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:15:57] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:15:57] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:15:58] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:15:58] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:20:03] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 4
+[2023-03-09 16:20:04] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 4
+[2023-03-09 16:20:49] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 4
+[2023-03-09 16:20:50] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 4
+[2023-03-09 16:21:18] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 4
+[2023-03-09 16:21:19] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 4
+[2023-03-09 16:21:51] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:21:51] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:21:53] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:21:53] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:22:41] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 6
+[2023-03-09 16:22:42] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 6
+[2023-03-09 16:25:39] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 6
+[2023-03-09 16:25:41] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 6
+[2023-03-09 16:26:16] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 6
+[2023-03-09 16:26:17] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 6
+[2023-03-09 16:28:47] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:28:47] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:28:48] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:28:48] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:29:05] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:29:05] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:29:06] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:29:07] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:29:11] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:29:11] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:29:12] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:29:12] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:31:14] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 2
+[2023-03-09 16:31:15] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 2
+[2023-03-09 16:35:40] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:35:40] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:35:42] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:35:42] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:35:50] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 7
+[2023-03-09 16:35:52] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 7
+[2023-03-09 16:35:58] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:35:58] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:35:59] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:35:59] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:36:53] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 5
+[2023-03-09 16:36:54] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 5
+[2023-03-09 16:37:01] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:37:01] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:37:02] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:37:02] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:37:16] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 5
+[2023-03-09 16:37:18] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 5
+[2023-03-09 16:40:06] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:40:06] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:40:07] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:40:07] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:40:16] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 5
+[2023-03-09 16:40:17] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 5
+[2023-03-09 16:43:01] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:43:01] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:43:02] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:43:02] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:43:12] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 3
+[2023-03-09 16:43:14] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 3
+[2023-03-09 16:43:33] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:43:33] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:43:34] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:43:34] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:44:36] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 1
+[2023-03-09 16:44:38] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 1
+[2023-03-09 16:56:35] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:56:35] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 16:56:36] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 16:56:36] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 17:06:19] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 17:06:19] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 17:06:21] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 17:06:21] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 17:06:53] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 7
+[2023-03-09 17:06:55] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 7
+[2023-03-09 17:27:16] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 17:27:16] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 17:27:18] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 17:27:18] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 17:27:34] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 3
+[2023-03-09 17:27:36] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 3
+[2023-03-09 17:34:04] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 17:34:04] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 17:34:06] [ INFO ] [CategoriaServiceImpl:67] Se inicio una operacion de listado de categorias 
+[2023-03-09 17:34:06] [ INFO ] [CiudadServiceImpl:60] Se inicio una operacion de listado de ciudades 
+[2023-03-09 17:34:27] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 7
+[2023-03-09 17:34:29] [ INFO ] [ImagenServiceImpl:61] Se inicio una operacion de buscar producto con ID= 7
