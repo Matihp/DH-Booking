@@ -44,3 +44,11 @@
         width: 150vw;
     }
   }
+  .svgHeader{
+    width: 5vw;
+  }
+  .btnHeader{
+    width: 9vw;
+    height: 5vh;
+    padding: 0;
+  }

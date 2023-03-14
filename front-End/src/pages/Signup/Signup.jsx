@@ -19,14 +19,20 @@ const Signup = () => {
     email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
     password: /^.{7,30}$/, // 
   };
-
+  
   const handleSubmit = (e) => {
       e.preventDefault()
       validateInputs()
       setisValid(true)
-      if(email.valid == null && password.valid == 'true'
-      && lastName.valid == null && name.valid == 'true' && password2.valid == 'true'){
-        alert(name.value+' '+lastName.value+',tu registro con el correo '+email.value+' ha sido exitoso ')
+      const obj={
+        name:name.value,
+        lastName:lastName.value,
+        email:email.value,
+        password:password.value,
+      }
+      if(email.valid == 'true' && password.valid == 'true'
+      && lastName.valid == 'true' && name.valid == 'true' && password2.valid == 'true'){
+          console.log(JSON.stringify(obj))
       }     
     }
 

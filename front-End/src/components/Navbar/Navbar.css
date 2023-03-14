@@ -7,7 +7,9 @@
     justify-content: center;
     align-items: center;
 }
-
+.svgNavbar{
+    width: 2vw;
+}
 .selectNavBar {
     width: 400px;
     height: 40px;
@@ -15,8 +17,9 @@
     border-radius: 5px;
     margin: 6px;
 }
-
-
+.rmdp-top-class{
+    width: 30vw;
+}
 .buttonNavBar {
     background-color: #F0572D;
     width: 206px;

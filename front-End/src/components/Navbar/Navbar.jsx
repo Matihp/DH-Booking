@@ -2,8 +2,9 @@ import './Navbar.css'
 import {DateObject } from "react-multi-date-picker"
 import DatePicker from "react-multi-date-picker"
 import { useState,useEffect } from 'react'
+import transition from "react-element-popper/animations/transition"
 import axios from 'axios'
-
+import iconWifi from '../../img/iconWifi.png'
 const Navbar = () => {
 
   const [ciudad, setCiudad] = useState([])
@@ -17,7 +18,6 @@ const Navbar = () => {
       console.log(data.data);
       setCiudad(data.data)
   }
-
   const [value, setValue] = useState([
     new DateObject().subtract(4, "days"),
     new DateObject().add(4, "days")
@@ -34,11 +34,15 @@ const Navbar = () => {
           {ciudad?.map(cat => <option value={cat.id} style={{color:"black"}}>{cat.nombre_ciudad}</option>)}
         </select>
         <DatePicker
+          placeholder="Check in - Check out"
           style={{height:'33px',marginBottom:'8px'}}
           range
-          value={value}
           onChange={handleChange}
           class='testClass'
+          minDate={new Date()}
+          animations={[
+            transition({ duration: 800, from: 35 })
+          ]} 
         />      
         
         <button className='buttonNavBar'>Buscar</button>
