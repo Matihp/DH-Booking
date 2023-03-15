@@ -6,10 +6,12 @@ export const ContextGlobal = createContext();
 export const ContextProvider = ({ children }) => {
 
   const [data,setData]=useState(false);
+  const [pressCategory,setPressCategory]=useState(false);
+  const [category,setCategory]=useState('');
 
   return (
     <ContextGlobal.Provider
-    value={{data,setData}}
+    value={{data,setData,pressCategory,setPressCategory,category,setCategory}}
     >
       {children}
     </ContextGlobal.Provider>

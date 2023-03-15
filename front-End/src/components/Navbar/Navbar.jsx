@@ -4,7 +4,6 @@ import DatePicker from "react-multi-date-picker"
 import { useState,useEffect } from 'react'
 import transition from "react-element-popper/animations/transition"
 import axios from 'axios'
-import iconWifi from '../../img/iconWifi.png'
 const Navbar = () => {
 
   const [ciudad, setCiudad] = useState([])
@@ -15,7 +14,6 @@ const Navbar = () => {
 
   const loadCategorias = async () => {
       const data = await axios.get("http://localhost:8080/ciudades")
-      console.log(data.data);
       setCiudad(data.data)
   }
   const [value, setValue] = useState([
