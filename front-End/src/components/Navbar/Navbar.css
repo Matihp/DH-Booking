@@ -7,6 +7,12 @@
     justify-content: center;
     align-items: center;
 }
+.formNavbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 76vw;
+}
 .svgNavbar{
     width: 2vw;
 }
@@ -26,10 +32,10 @@
     height: 45px;
     border-radius: 5px;
     color: white;
-    margin-left: 10px;
 }
 .rmdp-input{
     width: 390px;
+    font-size: 15px;
     /* Este es el datePicker */
 }
 @media (max-width: 768px) {

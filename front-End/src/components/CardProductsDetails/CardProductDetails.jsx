@@ -12,6 +12,7 @@ const CardProductDetails = () => {
   const [value, setValue] = useState([])
   const weekDays = ["D", "L", "M", "M", "J", "V", "S"];
   const months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+  
   function handleChange(value){
     setValue(value)
   }
@@ -27,17 +28,7 @@ const CardProductDetails = () => {
     // loadProduct()
     axios.get(`http://localhost:8080/productos/${id}`)
     .then(res=> setProd(res.data))
-        // console.log(data.data)
-        // setProd(data.data);
-        // console.log(prod);
   }, [])
-
-  // const loadProduct = async () => {
-  //   const data = await axios.get(`http://localhost:8080/productos/${id}`)
-  //       console.log(data.data)
-  //       setProd(data.data);
-  //       console.log(prod);
-  // }
 
   return (
     <div className='containerProductDetails'>

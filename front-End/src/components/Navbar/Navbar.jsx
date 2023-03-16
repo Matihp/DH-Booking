@@ -4,9 +4,14 @@ import DatePicker from "react-multi-date-picker"
 import { useState,useEffect } from 'react'
 import transition from "react-element-popper/animations/transition"
 import axios from 'axios'
+import logoGps from "../../img/logo-gps.png"
+import Dropdown from './Dropdown/Dropdown'
 const Navbar = () => {
 
   const [ciudad, setCiudad] = useState([])
+  const [data,setData]=useState([])
+  // const [option,setOption]=useState(null)
+  // const [open,setOpen]=useState(false)
 
   useEffect(() =>  {
       loadCategorias()
@@ -16,24 +21,25 @@ const Navbar = () => {
       const data = await axios.get("http://localhost:8080/ciudades")
       setCiudad(data.data)
   }
-  const [value, setValue] = useState([
-    new DateObject().subtract(4, "days"),
-    new DateObject().add(4, "days")
-  ])
+  const [value, setValue] = useState([])
+
   function handleChange(value){
     setValue(value)
+  }
+  function handleSubmit(e){
+    e.preventDefault()
+  }
+  function handleClick(e){
+    setOpen(!open)
   }
   return (
   <div className='navBar'>
     <h1 className='h1Navbar' style={{color:"white",marginBottom:'20px'}}>Busca ofertas en hoteles, casas y mucho más</h1>
     <form className='formNavbar'>
-        <select className='selectNavBar'>
-          <option disabled selected>¿A dónde vamos?</option>
-          {ciudad?.map(cat => <option value={cat.id} style={{color:"black"}}>{cat.nombre_ciudad}</option>)}
-        </select>
+      <Dropdown ciudad={ciudad}/>
         <DatePicker
           placeholder="Check in - Check out"
-          style={{height:'33px',marginBottom:'8px'}}
+          style={{height:'35px',border:'none',fontWeight:'900'}}
           range
           onChange={handleChange}
           class='testClass'
@@ -42,7 +48,6 @@ const Navbar = () => {
             transition({ duration: 800, from: 35 })
           ]} 
         />      
-        
         <button className='buttonNavBar'>Buscar</button>
     </form>
 </div>
