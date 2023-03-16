@@ -31,7 +31,7 @@
     padding: 15px;
     background: #fff;
     font-weight: bold;
-    color: black;
+    color: #755d55;
 }
 .dropdown .dropdown-content .dropdown-item{
     cursor: pointer;
@@ -39,6 +39,11 @@
     transition: all 0.2;
 }
 .dropdown .dropdown-content .dropdown-item:hover{
-    background: #f4f4f4;
-
+    background:#F0572D;
+    color: white;
+    -webkit-transform:scale(1.09);
+    -moz-transform:scale(1.09);
+    -ms-transform:scale(1.09);
+    -o-transform:scale(1.09);
+    transform:scale(1.09);
 }

@@ -1,15 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './CardBloqueRecomendaciones.css'
 import iconNatacion from '../../img/iconNatacion.png'
 import iconWifi from '../../img/iconWifi.png'
 import { Link, useParams } from 'react-router-dom';
+import { useGlobalStates } from '../../context/GlobalContext';
 
 
 const CardBloqueRecomendaciones = ({ recomendacion }) => {
 
     return (
         <div className='bloqueRecomendaciones'>
-            <div >
+            <div>
                 <img className='imagenRecomendaciones' src={recomendacion.listImagen[0].url} alt="imagen" />
             </div>
             <div className='divCardRecomendaciones'>
@@ -23,7 +24,7 @@ const CardBloqueRecomendaciones = ({ recomendacion }) => {
                     </div>
                 </div>
                 <p className='ubicacionP'>{recomendacion.tituloDescripcion}</p>
-                <button  className='buttonNav'>
+                <button className='buttonNav'>
                 <Link className='buttonNav' style={{textDecoration:"none"}} to={`/details/${recomendacion.id}`}>Ver más</Link>
                 </button>
             </div>

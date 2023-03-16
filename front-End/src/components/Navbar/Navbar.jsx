@@ -6,12 +6,12 @@ import transition from "react-element-popper/animations/transition"
 import axios from 'axios'
 import logoGps from "../../img/logo-gps.png"
 import Dropdown from './Dropdown/Dropdown'
+import { useGlobalStates } from '../../context/GlobalContext'
 const Navbar = () => {
 
   const [ciudad, setCiudad] = useState([])
   const [data,setData]=useState([])
-  // const [option,setOption]=useState(null)
-  // const [open,setOpen]=useState(false)
+  const {pressBtn,setPressBtn}=useGlobalStates()
 
   useEffect(() =>  {
       loadCategorias()
@@ -30,7 +30,8 @@ const Navbar = () => {
     e.preventDefault()
   }
   function handleClick(e){
-    setOpen(!open)
+    e.preventDefault()
+    setPressBtn(!pressBtn)
   }
   return (
   <div className='navBar'>
@@ -48,7 +49,7 @@ const Navbar = () => {
             transition({ duration: 800, from: 35 })
           ]} 
         />      
-        <button className='buttonNavBar'>Buscar</button>
+        <button className='buttonNavBar'onClick={handleClick}>Buscar</button>
     </form>
 </div>
   )
