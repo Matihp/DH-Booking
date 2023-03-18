@@ -1,14 +1,11 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import BloqueCategorias from './components/BloqueCategorias/BloqueCategorias';
-import BloqueRecomendaciones from './components/BloqueRecomendaciones/BloqueRecomendaciones';
+import { Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
-import Header from './components/Header/Header';
 import Layout from './components/Layout';
-import Navbar from './components/Navbar/Navbar';
 import Login from './pages/Login/login';
 import Signup from './pages/Signup/signup';
 import ProductDetails from './pages/Product/ProductDetails';
+import Booking from './pages/Booking/Booking';
 const App = () => {
   return (
     <div>
@@ -17,10 +14,14 @@ const App = () => {
         <Route path="/login" element={<Login/>} />
         <Route path="/signup" element={<Signup/>} />
         <Route path='/details/:id'element={<ProductDetails/>}/>
+        <Route path='/booking' element={<Booking/>}/>
+        <Route path="*" element={NotFound()} />
       </Routes>
       <Footer/>
     </div>
   )
 }
-
+function NotFound() {
+  return <h1 style={{color:'black'}}>Ha llegado a una página que no existe</h1>;
+}
 export default App

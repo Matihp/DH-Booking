@@ -25,7 +25,6 @@ const BloqueRecomendaciones = () => {
   useEffect(()=>{
     setFilterRecomendation(recomendacion.filter((rec)=>rec.ciudad.nombre_ciudad==cities.nombre_ciudad))
     setValid(!valid)
-    console.log(filterRecomendation)
   },[pressBtn])
 
   const loadRecomendaciones = async () => {

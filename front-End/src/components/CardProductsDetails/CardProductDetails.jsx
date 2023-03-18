@@ -3,7 +3,6 @@ import "./CardProductDetails.css";
 import imgFlecha from "../../img/flecha-izquierda.png";
 import logoGps from "../../img/logo-gps.png";
 import ProductSlider from "../ProductSlider/ProductSlider";
-import { Calendar } from "react-multi-date-picker";
 import axios from "axios";
 import { Link, useParams } from 'react-router-dom';
 

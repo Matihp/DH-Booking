@@ -23,7 +23,7 @@
     border-radius: 5px;
     margin: 6px;
 }
-.rmdp-top-class{
+.formNavbar .rmdp-top-class{
     width: 30vw;
 }
 .buttonNavBar {
@@ -36,11 +36,18 @@
 .rmdp-input{
     width: 390px;
     font-size: 15px;
+    color: #755d55;
     /* Este es el datePicker */
 }
 @media (max-width: 768px) {
     .navBar{
         width: 101vw;
+    }
+    .formNavbar{
+        width: 90vw;
+    }
+    .buttonNavBar {
+        width: 23vw;
     }
     .selectNavBar {
         width: 30vw;
@@ -54,11 +61,11 @@
         width: 140vw;
     }
     .rmdp-input{
-        width: 137vw;
+        width: 148vw;
     }
     .navBar{
         display: flex;
-        width: 159vw;
+        width: 153vw;
         height: 30vh;
     }
     .formNavbar{
@@ -70,6 +77,8 @@
         font-size: 28px;
     }
     .buttonNavBar{
-        margin-left: 0px;
+        margin-left: 3px;
+        margin-top: 13px;
+        width: 151vw;
     }
   }
