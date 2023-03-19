@@ -6,6 +6,7 @@ import Login from './pages/Login/login';
 import Signup from './pages/Signup/signup';
 import ProductDetails from './pages/Product/ProductDetails';
 import Booking from './pages/Booking/Booking';
+import Sucess from './pages/Success/Sucess';
 const App = () => {
   return (
     <div>
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/signup" element={<Signup/>} />
         <Route path='/details/:id'element={<ProductDetails/>}/>
         <Route path='/booking' element={<Booking/>}/>
+        <Route path='/booking/success'element={<Sucess/>}/>
         <Route path="*" element={NotFound()} />
       </Routes>
       <Footer/>
