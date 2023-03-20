@@ -8,7 +8,7 @@ import "swiper/css/navigation";
 
 import { Autoplay, Pagination, Navigation } from "swiper";
 
-const ProductSlider = () => {
+const ProductSlider = ({product}) => {
 
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
@@ -35,36 +35,27 @@ const ProductSlider = () => {
       >
         <SwiperSlide>
           <img
-            src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/habitacion-hotel-revolve2-1546271048.jpeg"
+            src={product?.listImagen[0].url}
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="https://media.ambito.com/p/d5069798a379128c4d48dc586dede974/adjuntos/239/imagenes/036/681/0036681204/2jpg.jpg"
+            src={product?.listImagen[1].url}
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partnerimages/61/37/613753900.jpeg"
+            src={product?.listImagen[2].url}
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partnerimages/33/18/331828796.jpeg" alt="" />
+          <img src={product?.listImagen[3].url} alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partnerimages/73/21/732178900.jpeg" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYlZoBqCVJN32weDAcB8zJaAwb-TniEmQ3-Q&usqp=CAU" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partnerimages/47/97/479710082.jpeg" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7zsstmI4e5oOIRY4PYNOFz-a8uDu5Eyn83Q&usqp=CAU" alt="" />
+          <img src={product?.listImagen[4].url} alt="" />
         </SwiperSlide>
         <div className="autoplay-progress" slot="container-end">
           <svg viewBox="0 0 48 48" ref={progressCircle}>

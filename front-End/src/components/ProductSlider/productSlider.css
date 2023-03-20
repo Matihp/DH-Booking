@@ -5,7 +5,7 @@
 }
 .swiper {
     width: 90vw;
-    height: 90vh;
+    height: 80vh;
   }
   .swiper-slide {
     display: flex;
@@ -26,7 +26,8 @@
   .swiper-slide img {
     display: block;
     width: 90vw;
-    height: 90vh;
+    height: 80vh;
+    /* aspect-ratio: 2/1; */
     object-fit: cover;
     border-radius: 7px;
   }

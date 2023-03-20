@@ -7,7 +7,9 @@
 }
 .imagenCategoria{
     width: 23vw; 
-    height: 210px;
+    /* height: 210px; */
+    aspect-ratio: 1.5/1;
+    object-fit: cover;
     border-radius:7px;
 }
 @media (max-width: 768px) {

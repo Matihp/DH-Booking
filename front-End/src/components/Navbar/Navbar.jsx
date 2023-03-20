@@ -37,7 +37,7 @@ const Navbar = () => {
   <div className='navBar'>
     <h1 className='h1Navbar' style={{color:"white",marginBottom:'20px'}}>Busca ofertas en hoteles, casas y mucho más</h1>
     <form className='formNavbar'>
-      <Dropdown ciudad={ciudad}/>
+      <Dropdown data={ciudad} value={'city'}/>
         <DatePicker
           placeholder="Check in - Check out"
           style={{height:'35px',border:'none',fontWeight:'900'}}

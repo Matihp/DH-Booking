@@ -34,6 +34,21 @@
     font-weight: bold;
     color: #755d55;
 }
+.svgDrop{
+    display: flex;
+    align-items: center;
+}
+.svgDropdown{
+    margin-right: 10px;
+    fill: #fff;
+    color: #755d55;
+}
+.svgDrop:hover{
+    color: #fff;
+}
+.svgDropdown:hover{
+    fill-rule: white;
+}
 .dropdown .dropdown-content .dropdown-item{
     cursor: pointer;
     padding: 10px;

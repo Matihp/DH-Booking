@@ -29,6 +29,7 @@ const CardProductDetails = () => {
     // loadProduct()
     axios.get(`http://localhost:8080/productos/${id}`)
     .then(res=> setProd(res.data))
+    console.log(JSON.stringify(prod))
   }, [])
 
   return (
@@ -70,7 +71,7 @@ const CardProductDetails = () => {
         <svg
           className="svgDetails"
           style={{ marginRight: "15px"}}
-          stroke-width="1.5"
+          strokeWidth="1.5"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -79,20 +80,20 @@ const CardProductDetails = () => {
           <path
             d="M18 22a3 3 0 100-6 3 3 0 000 6zM18 8a3 3 0 100-6 3 3 0 000 6zM6 15a3 3 0 100-6 3 3 0 000 6z"
             stroke="#000000"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           ></path>
           <path
             d="M15.5 6.5l-7 4M8.5 13.5l7 4"
             stroke="#000000"
-            stroke-width="1.5"
+            strokeWidth="1.5"
           ></path>
         </svg>
 
         <svg
           className="svgDetails"
-          stroke-width="1.5"
+          strokeWidth="1.5"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -101,8 +102,8 @@ const CardProductDetails = () => {
           <path
             d="M22 8.862a5.95 5.95 0 01-1.654 4.13c-2.441 2.531-4.809 5.17-7.34 7.608-.581.55-1.502.53-2.057-.045l-7.295-7.562c-2.205-2.286-2.205-5.976 0-8.261a5.58 5.58 0 018.08 0l.266.274.265-.274A5.612 5.612 0 0116.305 3c1.52 0 2.973.624 4.04 1.732A5.95 5.95 0 0122 8.862z"
             stroke="#000000"
-            stroke-width="1.5"
-            stroke-linejoin="round"
+            strokeWidth="1.5"
+            strokeLinejoin="round"
           ></path>
         </svg>
       </div>
@@ -139,7 +140,7 @@ const CardProductDetails = () => {
         </button>
       </div>
       <div className="responsiveProductImages">
-       <ProductSlider/>
+       <ProductSlider product={prod}/>
       </div>
       <div style={{ marginLeft: "20px",opacity: slider ? '0.3' : '' }}>
         <h2 style={{ fontSize: "2rem", fontWeight: "bolder",marginBottom:'30px',marginTop:'30px'}}>
@@ -253,10 +254,10 @@ const CardProductDetails = () => {
       
       {slider && (
         <div className="slider">
-          <ProductSlider />
-          <svg className="svgCloseSlider" onClick={handleClick} width="2vw" height="28px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" 
+          <ProductSlider product={prod}/>
+          <svg className="svgCloseSlider" onClick={handleClick} width="2vw" height="28px" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" 
           color="#000000"><path d="M6.758 17.243L12.001 12m5.243-5.243L12 12m0 0L6.758 6.757M12.001 12l5.243 5.243" stroke="#000000"
-           stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+           strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg>
         </div>
       )}
     </div>

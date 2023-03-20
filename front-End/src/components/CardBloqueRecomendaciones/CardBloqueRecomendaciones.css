@@ -17,6 +17,7 @@
 .imagenRecomendaciones{
     height: 100%;
     width: 420px;
+    object-fit: cover;
     border-radius: 7px;
 }
 .categoriaSpan{
@@ -39,7 +40,7 @@
 .buttonNav{
     width: 90%;
     background-color: #f0572d;
-    color:#dfe4ea;
+    color:white;
 }
 @media (max-width: 768px) {
     .bloqueRecomendaciones{
