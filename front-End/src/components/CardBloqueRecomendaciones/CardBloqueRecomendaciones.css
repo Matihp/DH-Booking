@@ -41,6 +41,7 @@
     width: 90%;
     background-color: #f0572d;
     color:white;
+    cursor: pointer;
 }
 @media (max-width: 768px) {
     .bloqueRecomendaciones{

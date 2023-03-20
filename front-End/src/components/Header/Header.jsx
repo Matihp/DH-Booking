@@ -12,7 +12,7 @@ const Header = ({onChange}) => {
     <div className='header'>
         <header>
             <div className='divContainer'>
-                <Link className='flex' to={"/"} style={{textDecoration:"none"}} >
+                <Link className='flex' to={"/"} style={{textDecoration:"none",cursor:'default'}} >
                     <img className='logo' src={logo} alt="logo"/>
                     <p className='headerText'>Sentite como en tu hogar</p>
                 </Link>

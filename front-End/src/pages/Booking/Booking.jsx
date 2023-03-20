@@ -15,6 +15,9 @@ const Booking = () => {
   function handleChange(value) {
     setValue(value);
   }
+  function handleClick(){
+    console.log(value)
+  }
   const time = [
     {
       id: 1,
@@ -63,7 +66,7 @@ const Booking = () => {
                   <label style={{ fontWeight: "bold" }} htmlFor="">
                     Email
                   </label>
-                  <input className="bookingInput" type="text" disabled/>
+                  <input className="bookingInput" type="email" disabled/>
                 </div>
                 <div className="containerBookingInput">
                   <label style={{ fontWeight: "bold" }} htmlFor="">
@@ -152,15 +155,15 @@ const Booking = () => {
               <hr style={{marginTop:'40px'}}/>
               <div className="bookingDetailsCheck">
                 <p style={{color:'black'}}>Check in</p>
-                <p style={{color:'black'}}>20/05/2022</p>
+                <p style={{color:'red'}}>{value[0] ? (`${value[0].day}/${value[0].month.number}/${value[0].year}`):'Seleccione la fecha'}</p>
               </div>
               <hr style={{marginTop:'40px'}}/>
               <div className="bookingDetailsCheck">
                 <p style={{color:'black'}}>Check out</p>
-                <p style={{color:'black'}}>27/05/2022</p>
+                <p style={{color:'red'}}>{value[1] ? (`${value[1].day}/${value[1].month.number}/${value[1].year}`):'Seleccione la fecha'}</p>
               </div>
               <hr style={{marginTop:'40px',marginBottom:'40px'}}/>
-              <button className="btnBooking">Confirmar reserva</button>
+              <button onClick={handleClick} className="btnBooking">Confirmar reserva</button>
             </div>
           </div>
         </div>

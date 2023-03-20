@@ -24,9 +24,13 @@ const CardBloqueRecomendaciones = ({ recomendacion }) => {
                     </div>
                 </div>
                 <p className='ubicacionP'>{recomendacion.tituloDescripcion}</p>
+                <Link  style={{textDecoration:"none"}} to={`/details/${recomendacion.id}`}>
                 <button className='buttonNav'>
-                <Link className='buttonNav' style={{textDecoration:"none"}} to={`/details/${recomendacion.id}`}>Ver más</Link>
-                </button>
+                
+                Ver más
+                </button>  
+                </Link>
+
             </div>
         </div>
     )

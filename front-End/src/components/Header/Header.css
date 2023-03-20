@@ -4,7 +4,9 @@
     font-family: 'Quicksand', sans-serif;
     font-size: 18px;
 }
-
+.logo{
+    cursor: pointer;
+}
 .divContainer{
     display: flex;
     justify-content: space-around;
@@ -52,4 +54,5 @@
     width: 9vw;
     height: 5vh;
     padding: 0;
+    
   }
