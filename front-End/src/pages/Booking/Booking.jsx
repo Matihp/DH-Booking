@@ -8,36 +8,43 @@ import Dropdown from "../../components/Navbar/Dropdown/Dropdown";
 import Stars from "../../components/CardProductsDetails/Stars/Stars";
 import axios from "axios";
 import Input from "../../components/Actions/useInput";
+import { useGlobalStates } from "../../context/GlobalContext";
 
 const Booking = () => {
   const [value, setValue] = useState([]);
   const [product,setProduct]=useState();
   const [useInput,setUseInput]=useState({ value: "", valid: null });
+  const {time}=useGlobalStates()
   const weekDays = ["D", "L", "M", "M", "J", "V", "S"];
   const months = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre",];
+
   const {id}=useParams()
+
   const regularExpressions = {
-    nameAndLastName: /^[a-zA-ZÀ-ÿ\s]{4,40}$/, 
-    email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-    password: /^.{7,30}$/, // 
+    nameAndLastName: /^[a-zA-ZÀ-ÿ\s]{4,40}$/,
   };
 
   function handleChange(value) {
     setValue(value);
   }
-  function handleInput(e){
-    setUseInput(e.target.value)
-  }
   function handleClick(){
-    console.log(useInput)
+    if(useInput.value.length>3){
+      console.log(useInput)
+    }
+    if(value[0] && value[1]){
+      console.log(value)
+    }
+    if(time!==null){
+      console.log(time)
+    }
+    
   }
   useEffect(() => {
     axios.get(`http://localhost:8080/productos/${id}`)
     .then(res=> setProduct(res.data))
-    console.log(JSON.stringify(product))
   }, [])
 
-  const time = [
+  const times = [
     {
       id: 1,
       hour: "10:00PM",
@@ -45,42 +52,6 @@ const Booking = () => {
     {
       id: 2,
       hour: "11:00PM",
-    },
-    {
-      id: 3,
-      hour: "12:00PM",
-    },
-    {
-      id: 3,
-      hour: "12:00PM",
-    },
-    {
-      id: 3,
-      hour: "12:00PM",
-    },
-    {
-      id: 3,
-      hour: "12:00PM",
-    },
-    {
-      id: 3,
-      hour: "12:00PM",
-    },
-    {
-      id: 3,
-      hour: "12:00PM",
-    },
-    {
-      id: 3,
-      hour: "12:00PM",
-    },
-    {
-      id: 3,
-      hour: "12:00PM",
-    },
-    {
-      id: 3,
-      hour: "12:00PM",
     },
     {
       id: 3,
@@ -124,10 +95,6 @@ const Booking = () => {
                   <input className="bookingInput" type="email" disabled/>
                 </div>
                 <div className="containerBookingInput">
-                  {/* <label style={{ fontWeight: "bold" }} htmlFor="">
-                    Ciudad
-                  </label> */}
-                  {/* <input onChange={handleInput} className="bookingInput" type="text"required min={4}/> */}
                   <Input
                 state={useInput}
                 changeState={setUseInput}
@@ -180,7 +147,7 @@ const Booking = () => {
                 <p style={{ color: "black", marginBottom: "10px",fontWeight:'bold'}}>
                   Indica tu horario estimado de llegada
                 </p>
-                <Dropdown data={time} value={'booking'}/>
+                <Dropdown data={times} value={'booking'}/>
               </div>
             </div>
             <div className="containerBookingTerms">

@@ -40,23 +40,23 @@ const BloqueRecomendaciones = () => {
 
   return (
   <div>
-    <h2 style={{ marginLeft: "30px",marginTop:'20px' }}>Recomendaciones</h2>
+    <h2 style={{ marginLeft: "30px",marginTop:'20px' }}>{category == null && !valid != '' ? 'Recomendaciones' : 'Resultados de busqueda'}</h2>
     <div className='contenedorRecomendaciones'>
       <div className='divRecomendaciones'>
         {valid && cities !== null && (
 
           filterRecomendation?.map(recomendacion => <CardBloqueRecomendaciones key={recomendacion.id} recomendacion={recomendacion}/>)
         )}
-        { (category == null) && (!valid) &&(
+        { category == null && !valid &&(
             
               recomendacion?.map(recomendacion => <CardBloqueRecomendaciones key={recomendacion.id} recomendacion={recomendacion}/>)
           
           )}
-          {
-            !valid && category != '' &&(
-              filterRecomend?.map(recomendacion=><CardBloqueRecomendaciones key={recomendacion.id} recomendacion={recomendacion}/>)
-            )
-          }
+        {
+          !valid && category != '' &&(
+            filterRecomend?.map(recomendacion=><CardBloqueRecomendaciones key={recomendacion.id} recomendacion={recomendacion}/>)
+          )
+        }
       </div>
     </div>
 </div>

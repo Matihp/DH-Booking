@@ -3,17 +3,14 @@ import { useGlobalStates } from '../../../context/GlobalContext'
 import './dropdown.css'
 
 const Dropdown = ({data,value}) => {
-    const [option,setOption]=useState(null)
     const [open,setOpen]=useState(false)
-    const {cities,setCities}=useGlobalStates()
+    const {cities,setCities,time,setTime}=useGlobalStates()
 
     function handleClick(e){
         setOpen(!open)
-      }
-      let text = cities
-      ? `${cities.nombre_ciudad}`
-      : '¿A dónde vamos?';
-      let text2= cities ? `${cities.hour}` : 'Seleccioná la hora de llegada';
+      }  
+    let text = cities ? `${cities.nombre_ciudad}`: '¿A dónde vamos?';
+    let text2= time ? `${time.hour}` : 'Seleccioná la hora de llegada';
   return (
     <div className='dropdown'>
         <div className='dropdown-btn'onClick={handleClick}>
@@ -61,7 +58,7 @@ const Dropdown = ({data,value}) => {
                 <div
                 className='dropdown-item'
                 onClick={()=>{
-                  setCities(data)
+                  setTime(data)
                   setOpen(false)  
                 }}
                 key={data.id}

@@ -11,7 +11,6 @@ const Login = () => {
   const [password, setPassword] = useState({ value: "", valid: null });
 
   const [isFormValid, setIsFormValid] = useState(null);
-  const [msgError, setMsgError] = useState("");
 
   const regularExpressions = {
     email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
@@ -23,13 +22,11 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsFormValid(true);
-
+    //setIsFormValid(true); 
     if (email.valid === 'true' && password.valid === 'true') {
       setData(true)
       navigate('/')
-    }
-      
+    }   
   }
 
   return (
@@ -61,11 +58,12 @@ const Login = () => {
           />
           {isFormValid === false && (
             <p className='msgErrorForm'>
-              {msgError
-                ? msgError
-                : "Por favor vuelva a intentarlo, sus credenciales son inválidas."}
+              "Por favor vuelva a intentarlo, sus credenciales son inválidas."
             </p>
           )}
+          {/* <p className='msgErrorForm'>
+          Lamentablemente no ha podido iniciar sesión. Por favor intente más tarde.
+            </p> */}
           <div className='containerBtnSignup'>
             
               <button type="submit" >

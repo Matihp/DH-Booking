@@ -166,6 +166,9 @@ const Signup = () => {
                   : 'Por favor vuelva a intentarlo, algunos de los datos ingresados no son correctos.'}
               </p>
             )}
+            {/* <p className='msgErrorForm' >
+            Lamentablemente no ha podido registrarse. Por favor intente más tarde
+            </p> */}
             <div className='containerBtnSignup'>
                 <button type="submit">
                 Crear cuenta

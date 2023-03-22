@@ -27,7 +27,6 @@ const CardProductDetails = () => {
   const [prod, setProd] = useState()
 
   useEffect(() => {
-    // loadProduct()
     axios.get(`http://localhost:8080/productos/${id}`)
     .then(res=> setProd(res.data))
   }, [])
