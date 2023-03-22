@@ -70,12 +70,13 @@
     object-fit: cover;
 }
 .containerBookingTerms{
-    height: 40vh;
+    height: 50vh;
     width: 60vw;
 }
 .backgBookingTerms{
     background-color: #fff;
     width: 98.8vw;
+    height: 50vh;
 }
 .bookingTerms{
     display: flex;
@@ -96,4 +97,6 @@
 .btnBooking{
     width:100%;
     margin: 0;
+    background-color:#F0572D ;
+    color: #fff;
 }

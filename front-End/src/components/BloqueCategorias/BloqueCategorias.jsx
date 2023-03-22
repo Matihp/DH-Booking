@@ -18,14 +18,6 @@ const BloqueCategorias = () => {
         const data = await axios.get("http://localhost:8080/categorias")
         setCategoria(data.data)
     }
-
-    // const loadCantidad = async () => {
-    //     categoria.forEach(cat => {
-    //         const data = (axios.get("http://localhost:8080/categorias/"`${cat.id}`))
-    //         setCantidad(data.data)
-    //         console.log(cantidad);
-    //     });
-    // }
     
     return (
         <div className='hola'>

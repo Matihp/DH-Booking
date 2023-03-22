@@ -9,9 +9,14 @@ button{
     border-radius: 5px;
     padding: 10px;
     margin: 5px;
+    cursor: pointer;
 }
 .divSesion{
     width: 51vw;
+}
+.btnSesion:hover{
+    background-color: #F0572D;
+    color: white;
 }
 .logoSesion{
     display: none;

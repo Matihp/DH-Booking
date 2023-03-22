@@ -7,9 +7,9 @@ export const ContextProvider = ({ children }) => {
 
   const [data,setData]=useState(false);
   const [pressCategory,setPressCategory]=useState(false);
-  const [category,setCategory]=useState('');
-  const [cities,setCities]=useState(null)
-  const [pressBtn,setPressBtn]=useState(true)
+  const [category,setCategory]=useState(null);
+  const [cities,setCities]=useState(null);
+  const [pressBtn,setPressBtn]=useState(true);
 
   return (
     <ContextGlobal.Provider

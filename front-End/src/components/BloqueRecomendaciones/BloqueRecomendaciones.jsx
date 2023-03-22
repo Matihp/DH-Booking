@@ -12,7 +12,7 @@ const BloqueRecomendaciones = () => {
   const {pressCategory,category,cities,pressBtn}=useGlobalStates()
   const [filterRecomend,setFilterRecomend]=useState([])
   const [filterRecomendation,setFilterRecomendation]=useState([])
-  const [valid,setValid]=useState(true)
+  const [valid,setValid]=useState(false);
 
   useEffect(() =>  {
     loadRecomendaciones()
@@ -23,9 +23,15 @@ const BloqueRecomendaciones = () => {
   },[pressCategory])
 
   useEffect(()=>{
-    setFilterRecomendation(recomendacion.filter((rec)=>rec.ciudad.nombre_ciudad==cities.nombre_ciudad))
-    setValid(!valid)
+    if(cities !== null){
+      setFilterRecomendation(recomendacion.filter((rec)=>rec.ciudad.nombre_ciudad==cities.nombre_ciudad))
+    }
+    setValid(true)
   },[pressBtn])
+
+  useEffect(()=>{
+    setValid(false)
+  },[pressCategory])
 
   const loadRecomendaciones = async () => {
       const data = await axios.get("http://localhost:8080/productos/random")
@@ -37,24 +43,20 @@ const BloqueRecomendaciones = () => {
     <h2 style={{ marginLeft: "30px",marginTop:'20px' }}>Recomendaciones</h2>
     <div className='contenedorRecomendaciones'>
       <div className='divRecomendaciones'>
-        {valid ? (
+        {valid && cities !== null && (
 
           filterRecomendation?.map(recomendacion => <CardBloqueRecomendaciones key={recomendacion.id} recomendacion={recomendacion}/>)
-
-        ):(
-
-          category == '' ? (
+        )}
+        { (category == null) && (!valid) &&(
             
               recomendacion?.map(recomendacion => <CardBloqueRecomendaciones key={recomendacion.id} recomendacion={recomendacion}/>)
           
-          ) :(
-            
+          )}
+          {
+            !valid && category != '' &&(
               filterRecomend?.map(recomendacion=><CardBloqueRecomendaciones key={recomendacion.id} recomendacion={recomendacion}/>)
-            
-          )
-
-        )}
-        
+            )
+          }
       </div>
     </div>
 </div>

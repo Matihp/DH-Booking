@@ -43,6 +43,9 @@
     color:white;
     cursor: pointer;
 }
+.buttonNav:hover{
+    background-color: rgb(243, 56, 56);
+}
 @media (max-width: 768px) {
     .bloqueRecomendaciones{
         width: 95vw;

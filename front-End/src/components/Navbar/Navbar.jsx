@@ -49,7 +49,7 @@ const Navbar = () => {
             transition({ duration: 800, from: 35 })
           ]} 
         />      
-        <button className='buttonNavBar'onClick={handleClick}>Buscar</button>
+      <button className='buttonNavBar'onClick={handleClick}>Buscar</button>  
     </form>
 </div>
   )

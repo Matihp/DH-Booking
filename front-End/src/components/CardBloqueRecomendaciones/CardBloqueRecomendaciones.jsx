@@ -26,7 +26,6 @@ const CardBloqueRecomendaciones = ({ recomendacion }) => {
                 <p className='ubicacionP'>{recomendacion.tituloDescripcion}</p>
                 <Link  style={{textDecoration:"none"}} to={`/details/${recomendacion.id}`}>
                 <button className='buttonNav'>
-                
                 Ver más
                 </button>  
                 </Link>

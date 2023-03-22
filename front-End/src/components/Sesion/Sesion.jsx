@@ -16,8 +16,8 @@ const Sesion = ({onChange}) => {
       {
         toogle == 'home' && (
           <>
-          <Link to={'/signup'}><button style={{cursor:'pointer'}}>Crear cuenta</button></Link>
-          <Link to={'/login'}><button style={{cursor:'pointer'}}>Iniciar sesión</button></Link>
+          <Link to={'/signup'}><button className='btnSesion'>Crear cuenta</button></Link>
+          <Link to={'/login'}><button className='btnSesion'>Iniciar sesión</button></Link>
           </>       
         )
       }

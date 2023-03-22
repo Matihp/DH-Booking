@@ -56,7 +56,7 @@ const Dropdown = ({data,value}) => {
         )}
         {
            open && value == 'booking' && (
-            <div className='dropdown-content'>
+            <div className='otherDropdown-content'>
             {data?.map((data) => (
                 <div
                 className='dropdown-item'

@@ -4,7 +4,7 @@ import imgFlecha from "../../img/flecha-izquierda.png";
 import logoGps from "../../img/logo-gps.png";
 import ProductSlider from "../ProductSlider/ProductSlider";
 import axios from "axios";
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import Stars from "./Stars/Stars";
 import { Calendar } from "react-multi-date-picker";
 
@@ -13,7 +13,8 @@ const CardProductDetails = () => {
   const [value, setValue] = useState([])
   const weekDays = ["D", "L", "M", "M", "J", "V", "S"];
   const months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-  
+  const navigate=useNavigate()
+
   function handleChange(value){
     setValue(value)
   }
@@ -29,7 +30,6 @@ const CardProductDetails = () => {
     // loadProduct()
     axios.get(`http://localhost:8080/productos/${id}`)
     .then(res=> setProd(res.data))
-    console.log(JSON.stringify(prod))
   }, [])
 
   return (
@@ -116,22 +116,22 @@ const CardProductDetails = () => {
         <div className="imgColumnas">
           <img
             className="imgSecundariaDetails"
-            src={prod?.listImagen[1].url}
+            src={prod?.listImagen[1]?.url}
             alt=""
           />
           <img
             className="imgSecundariaDetails"
-            src={prod?.listImagen[2].url}
+            src={prod?.listImagen[2]?.url}
             alt=""
           />
           <img
             className="imgSecundariaDetails"
-            src={prod?.listImagen[3].url}
+            src={prod?.listImagen[3]?.url}
             alt=""
           />
           <img
             className="imgSecundariaDetails"
-            src={prod?.listImagen[4].url}
+            src={prod?.listImagen[4]?.url}
             alt=""
           />
         </div>
@@ -225,7 +225,7 @@ const CardProductDetails = () => {
           />
           <div className="productReserve">
             <p style={{color:'black',fontWeight:'600'}}>Agrega tus fechas de viaje para obtener precios exactos</p>
-            <button className="btnProduct">Iniciar reserva</button>
+            <button onClick={()=>{navigate(`/details/${id}/booking`)}} className="btnProduct">Iniciar reserva</button>
           </div> 
           </div>
           <div className="productCalendarMobile">
@@ -243,7 +243,7 @@ const CardProductDetails = () => {
           <div className="moveProductReserve">
             <div className="productReserve">
                  <p style={{color:'black',fontWeight:'600'}}>Agrega tus fechas de viaje para obtener precios exactos</p>
-                  <button className="btnProduct">Iniciar reserva</button>
+                  <button onClick={()=>{navigate(`/details/${id}/booking`)}} className="btnProduct">Iniciar reserva</button>
             </div> 
           </div>
           

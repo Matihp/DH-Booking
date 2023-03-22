@@ -7,7 +7,13 @@
   .useLabel {
     width: fit-content;
     margin-bottom: 8px;
-  } 
+  }
+  .otherLabel{
+    font-size: 16px;
+    font-weight: 900;
+    margin-left: 36px;
+    margin-bottom: 3px;
+  }
   .inputChildren {
     position: relative;
   }  
@@ -16,10 +22,20 @@
     border: none;
     border-radius: 5px;
     height: 40px;
-    margin-bottom: 5px;
     width: 100%;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
-  } 
+  }
+  .otherInput{
+    font-weight: bold;
+    width: 25vw;
+    padding: 0 18px;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    margin-top: 3.5px;
+    margin-left: 35px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+  }
    .iconVisibility {
     position: absolute;
     bottom: 12px;

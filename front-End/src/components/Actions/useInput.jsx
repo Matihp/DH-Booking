@@ -46,12 +46,12 @@ const Input = ({
 
   return (
     <div className={style.inputContainer}>
-      <label className={style.useLabel} htmlFor={name}>
+      <label className={name=='text' ? style.otherLabel :style.useLabel} htmlFor={name}>
         {label}
       </label>
       <div className={style.inputChildren}>
         <input
-          className={`${style.useInput} ${
+          className={`${name=='text' ? style.otherInput : style.useInput} ${
             state.valid === 'false' ? style.inputError : ''
           } `}
           type={id !== 'password' ? type : viewPassword ? 'text' : 'password'}
