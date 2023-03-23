@@ -1,9 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import './CardBloqueRecomendaciones.css'
-import iconNatacion from '../../img/iconNatacion.png'
-import iconWifi from '../../img/iconWifi.png'
-import { Link, useParams } from 'react-router-dom';
-import { useGlobalStates } from '../../context/GlobalContext';
+import { Link} from 'react-router-dom';
 
 
 const CardBloqueRecomendaciones = ({ recomendacion }) => {

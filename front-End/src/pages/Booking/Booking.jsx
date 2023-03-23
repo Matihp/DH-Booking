@@ -9,12 +9,14 @@ import Stars from "../../components/CardProductsDetails/Stars/Stars";
 import axios from "axios";
 import Input from "../../components/Actions/useInput";
 import { useGlobalStates } from "../../context/GlobalContext";
+import timesInput from '../../times.json'
 
 const Booking = () => {
   const [value, setValue] = useState([]);
   const [product,setProduct]=useState();
   const [useInput,setUseInput]=useState({ value: "", valid: null });
-  const {time}=useGlobalStates()
+  const {time, data}=useGlobalStates()
+  const [error,setError]=useState(false)
   const weekDays = ["D", "L", "M", "M", "J", "V", "S"];
   const months = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre",];
 
@@ -28,36 +30,40 @@ const Booking = () => {
     setValue(value);
   }
   function handleClick(){
-    if(useInput.value.length>3){
-      console.log(useInput)
+    const reserva = {
+      fechaInicio:(`${value[0].year}-${value[0].month.number}-${value[0].day}`),
+      fechaFinal:(`${value[1].year}-${value[1].month.number}-${value[1].day}`),
+      producto:{
+          id: id
+      },
+      user:{
+          id: JSON.stringify(data.id)
+      }
     }
+    console.log(reserva);
+    fetch("http://localhost:8080/reservas", {
+      method: "POST",
+      body: JSON.stringify(reserva),
+      headers: {
+        'Content-type': 'application/json',
+        'Cookie': `jwt=${data.token}`
+      }})
+      .then((response) =>  response.text())
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+        setError(true);
+      })
+
     if(value[0] && value[1]){
-      console.log(value)
-    }
-    if(time!==null){
-      console.log(time)
-    }
-    
+    }  
   }
   useEffect(() => {
     axios.get(`http://localhost:8080/productos/${id}`)
     .then(res=> setProduct(res.data))
   }, [])
-
-  const times = [
-    {
-      id: 1,
-      hour: "10:00PM",
-    },
-    {
-      id: 2,
-      hour: "11:00PM",
-    },
-    {
-      id: 3,
-      hour: "12:00PM",
-    },
-  ];
   return (
     <>
       <Header onChange={"home"} />
@@ -80,19 +86,19 @@ const Booking = () => {
                   <label style={{ fontWeight: "bold" }} htmlFor="">
                     Nombre
                   </label>
-                  <input className="bookingInput" type="text" disabled/>
+                  <input placeholder={data.first_name} className="bookingInput" type="text" disabled/>
                 </div>
                 <div className="containerBookingInput">
                   <label style={{ fontWeight: "bold" }} htmlFor="">
                     Apellido
                   </label>
-                  <input className="bookingInput" type="text" disabled/>
+                  <input placeholder={data.last_name} className="bookingInput" type="text" disabled/>
                 </div>
                 <div className="containerBookingInput">
                   <label style={{ fontWeight: "bold" }} htmlFor="">
                     Email
                   </label>
-                  <input className="bookingInput" type="email" disabled/>
+                  <input placeholder={data.email} className="bookingInput" type="email" disabled/>
                 </div>
                 <div className="containerBookingInput">
                   <Input
@@ -106,6 +112,7 @@ const Booking = () => {
                 regex={regularExpressions.nameAndLastName}
               />
                 </div>
+              { error && (<p className="errorBooking">Lamentablemente la reserva no ha podido realizarse. Por favor, intente más tarde</p>)}
               </form>
             </div>
             <div className="containerBookingCalendar">
@@ -147,7 +154,7 @@ const Booking = () => {
                 <p style={{ color: "black", marginBottom: "10px",fontWeight:'bold'}}>
                   Indica tu horario estimado de llegada
                 </p>
-                <Dropdown data={times} value={'booking'}/>
+                <Dropdown data={timesInput} value={'booking'}/>
               </div>
             </div>
             <div className="containerBookingTerms">

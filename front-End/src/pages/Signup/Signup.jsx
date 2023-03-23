@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import Input from '../../components/Actions/useInput';
 import './signup.css';
-import { Link } from 'react-router-dom';
+import { Await, Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 
 const Signup = () => {
@@ -13,6 +13,7 @@ const Signup = () => {
 
   const [isValid, setisValid] = useState(null);
   const [msgError, setMsgError] = useState('');
+  const [error,setError]=useState(false)
 
   const regularExpressions = {
     nameAndLastName: /^[a-zA-ZÀ-ÿ\s]{4,40}$/, 
@@ -20,19 +21,33 @@ const Signup = () => {
     password: /^.{7,30}$/, // 
   };
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
       e.preventDefault()
       validateInputs()
       setisValid(true)
       const obj={
-        name:name.value,
-        lastName:lastName.value,
+        first_name:name.value,
+        last_name:lastName.value,
         email:email.value,
         password:password.value,
       }
       if(email.valid == 'true' && password.valid == 'true'
       && lastName.valid == 'true' && name.valid == 'true' && password2.valid == 'true'){
-          console.log(JSON.stringify(obj))
+          fetch("http://localhost:8080/api/v1/auth/register", {
+            method: "POST",
+            body: JSON.stringify(obj),
+            headers: {
+              "Content-type": "application/json; charset=UTF-8"
+            }})
+            .then((response) =>  response.json())
+            .then((res) => {
+              console.log(res);
+              alert(name.value+' '+lastName.value+',tu registro con el correo '+email.value+' ha sido completado con exito ')
+              })
+            .catch((err) => {
+              console.log(err);
+              setError(true)
+            })
       }     
     }
 
@@ -166,9 +181,9 @@ const Signup = () => {
                   : 'Por favor vuelva a intentarlo, algunos de los datos ingresados no son correctos.'}
               </p>
             )}
-            {/* <p className='msgErrorForm' >
+            {error && (<p className='msgErrorForm' >
             Lamentablemente no ha podido registrarse. Por favor intente más tarde
-            </p> */}
+            </p>)}
             <div className='containerBtnSignup'>
                 <button type="submit">
                 Crear cuenta

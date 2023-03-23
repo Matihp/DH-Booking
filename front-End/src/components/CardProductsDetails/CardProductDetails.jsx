@@ -7,6 +7,7 @@ import axios from "axios";
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import Stars from "./Stars/Stars";
 import { Calendar } from "react-multi-date-picker";
+import { useGlobalStates } from "../../context/GlobalContext";
 
 const CardProductDetails = () => {
   const [slider, setSlider] = useState(false);
@@ -15,6 +16,20 @@ const CardProductDetails = () => {
   const months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
   const navigate=useNavigate()
 
+  const {setValidateLogin,data}=useGlobalStates()
+
+  const {id} = useParams()
+  const [prod, setProd] = useState()
+
+  function redirect(){
+    if(data.token==''){
+        setValidateLogin(true)
+        navigate('/login')
+    }else{
+      navigate(`/details/${id}/booking`)
+    }   
+}
+
   function handleChange(value){
     setValue(value)
   }
@@ -22,9 +37,7 @@ const CardProductDetails = () => {
     setSlider(!slider);
   };
 
-  const {id} = useParams()
-
-  const [prod, setProd] = useState()
+  
 
   useEffect(() => {
     axios.get(`http://localhost:8080/productos/${id}`)
@@ -224,7 +237,7 @@ const CardProductDetails = () => {
           />
           <div className="productReserve">
             <p style={{color:'black',fontWeight:'600'}}>Agrega tus fechas de viaje para obtener precios exactos</p>
-            <button onClick={()=>{navigate(`/details/${id}/booking`)}} className="btnProduct">Iniciar reserva</button>
+            <button onClick={redirect} className="btnProduct">Iniciar reserva</button>
           </div> 
           </div>
           <div className="productCalendarMobile">
@@ -242,7 +255,7 @@ const CardProductDetails = () => {
           <div className="moveProductReserve">
             <div className="productReserve">
                  <p style={{color:'black',fontWeight:'600'}}>Agrega tus fechas de viaje para obtener precios exactos</p>
-                  <button onClick={()=>{navigate(`/details/${id}/booking`)}} className="btnProduct">Iniciar reserva</button>
+                  <button onClick={redirect} className="btnProduct">Iniciar reserva</button>
             </div> 
           </div>
           

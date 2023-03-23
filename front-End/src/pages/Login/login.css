@@ -8,6 +8,23 @@
     height: 31px;
     margin-right: 14px;
   }
+  .containerAlertLogin{
+    display: flex;
+    justify-content: center;
+  }
+  .alertLogin{
+    background-color: #f0572b;
+    border-radius: 6px;
+    font-size: 26px;
+  }
+  .linkAlertLogin{
+    color: white;
+    text-decoration: none;
+    margin-left: 5px;
+  }
+  .linkAlertLogin:hover{
+    opacity: 0.5;
+  }
   
   .formSignup {
     display: flex;
