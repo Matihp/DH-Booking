@@ -94,7 +94,7 @@ const Login = () => {
             </p>)}
           <div className='containerBtnSignup'>
             
-              <button type="submit" >
+              <button type="submit"className="btnLogin" >
                 Ingresar
               </button> 
             <p className='linkContainer' style={{color:'black'}}>

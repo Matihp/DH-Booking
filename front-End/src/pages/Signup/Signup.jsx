@@ -185,7 +185,7 @@ const Signup = () => {
             Lamentablemente no ha podido registrarse. Por favor intente más tarde
             </p>)}
             <div className='containerBtnSignup'>
-                <button type="submit">
+                <button type="submit" className='btnSignup'>
                 Crear cuenta
               </button>
               <p className='linkContainer'>

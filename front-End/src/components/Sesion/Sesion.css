@@ -17,6 +17,7 @@ button{
 .btnSesion:hover{
     background-color: #F0572D;
     color: white;
+    transition-delay:0.06s;
 }
 .logoSesion{
     display: none;
