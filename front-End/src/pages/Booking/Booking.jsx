@@ -7,24 +7,18 @@ import { Calendar } from "react-multi-date-picker";
 import Dropdown from "../../components/Navbar/Dropdown/Dropdown";
 import Stars from "../../components/CardProductsDetails/Stars/Stars";
 import axios from "axios";
-import Input from "../../components/Actions/useInput";
 import { useGlobalStates } from "../../context/GlobalContext";
 import timesInput from '../../times.json'
 
 const Booking = () => {
   const [value, setValue] = useState([]);
   const [product,setProduct]=useState();
-  const [useInput,setUseInput]=useState({ value: "", valid: null });
   const {time, data}=useGlobalStates()
   const [error,setError]=useState(false)
   const weekDays = ["D", "L", "M", "M", "J", "V", "S"];
   const months = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre",];
 
   const {id}=useParams()
-
-  const regularExpressions = {
-    nameAndLastName: /^[a-zA-ZÀ-ÿ\s]{4,40}$/,
-  };
 
   function handleChange(value) {
     setValue(value);
@@ -41,7 +35,9 @@ const Booking = () => {
       }
     }
     console.log(reserva);
-    fetch("http://localhost:8080/reservas", {
+    
+    if(value[0] && value[1]){
+      fetch("http://localhost:8080/reservas", {
       method: "POST",
       body: JSON.stringify(reserva),
       headers: {
@@ -56,8 +52,6 @@ const Booking = () => {
         console.log(err);
         setError(true);
       })
-
-    if(value[0] && value[1]){
     }  
   }
   useEffect(() => {
@@ -101,16 +95,7 @@ const Booking = () => {
                   <input placeholder={data.email} className="bookingInput" type="email" disabled/>
                 </div>
                 <div className="containerBookingInput">
-                  <Input
-                state={useInput}
-                changeState={setUseInput}
-                label="Ciudad"
-                type="text"
-                id="name"
-                name="text"
-                error="Debe tener 4 caracteres como mínimo"
-                regex={regularExpressions.nameAndLastName}
-              />
+
                 </div>
               { error && (<p className="errorBooking">Lamentablemente la reserva no ha podido realizarse. Por favor, intente más tarde</p>)}
               </form>
