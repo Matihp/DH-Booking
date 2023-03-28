@@ -1,12 +1,12 @@
 import './Navbar.css'
-import {DateObject } from "react-multi-date-picker"
 import DatePicker from "react-multi-date-picker"
 import { useState,useEffect } from 'react'
 import transition from "react-element-popper/animations/transition"
 import axios from 'axios'
-import logoGps from "../../img/logo-gps.png"
 import Dropdown from './Dropdown/Dropdown'
 import { useGlobalStates } from '../../context/GlobalContext'
+import endpoint from '../../utils/endpoint.json'
+
 const Navbar = () => {
 
   const [ciudad, setCiudad] = useState([])
@@ -18,7 +18,7 @@ const Navbar = () => {
   }, [])
 
   const loadCategorias = async () => {
-      const data = await axios.get("http://localhost:8080/ciudades")
+      const data = await axios.get(`${endpoint.url}/ciudades`)
       setCiudad(data.data)
   }
   const [value, setValue] = useState([])

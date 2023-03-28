@@ -1,8 +1,9 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import Input from '../../components/Actions/useInput';
 import './signup.css';
-import { Await, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
+import endpoint from '../../utils/endpoint.json';
 
 const Signup = () => {
   const [name, setName] = useState({ value: '', valid: null });
@@ -13,13 +14,13 @@ const Signup = () => {
 
   const [isValid, setisValid] = useState(null);
   const [msgError, setMsgError] = useState('');
-  const [error,setError]=useState(false)
+  const [error,setError]=useState(false);
 
   const regularExpressions = {
     nameAndLastName: /^[a-zA-ZÀ-ÿ\s]{4,40}$/, 
     email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
     password: /^.{7,30}$/, // 
-  };
+  }
   
   const handleSubmit = async (e) => {
       e.preventDefault()
@@ -33,7 +34,7 @@ const Signup = () => {
       }
       if(email.valid == 'true' && password.valid == 'true'
       && lastName.valid == 'true' && name.valid == 'true' && password2.valid == 'true'){
-          fetch("http://localhost:8080/api/v1/auth/register", {
+          fetch(`${endpoint.url}/api/v1/auth/register`, {
             method: "POST",
             body: JSON.stringify(obj),
             headers: {

@@ -4,7 +4,7 @@ import './BloqueRecomendaciones.css'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useGlobalStates } from '../../context/GlobalContext'
-
+import endpoint from '../../utils/endpoint.json'
 
 const BloqueRecomendaciones = () => {
 
@@ -34,7 +34,7 @@ const BloqueRecomendaciones = () => {
   },[pressCategory])
 
   const loadRecomendaciones = async () => {
-      const data = await axios.get("http://localhost:8080/productos/random")
+      const data = await axios.get(`${endpoint.url}/productos/random`)
       setRecomendacion(data.data)
   }
 

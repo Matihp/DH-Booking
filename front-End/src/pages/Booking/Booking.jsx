@@ -8,17 +8,18 @@ import Dropdown from "../../components/Navbar/Dropdown/Dropdown";
 import Stars from "../../components/CardProductsDetails/Stars/Stars";
 import axios from "axios";
 import { useGlobalStates } from "../../context/GlobalContext";
-import timesInput from '../../times.json'
+import timesInput from '../../utils/times.json';
+import endpoint from '../../utils/endpoint.json';
 
 const Booking = () => {
   const [value, setValue] = useState([]);
   const [product,setProduct]=useState();
-  const {time, data}=useGlobalStates()
-  const [error,setError]=useState(false)
+  const {time, data}=useGlobalStates();
+  const [error,setError]=useState(false);
   const weekDays = ["D", "L", "M", "M", "J", "V", "S"];
   const months = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre",];
 
-  const {id}=useParams()
+  const {id}=useParams();
 
   function handleChange(value) {
     setValue(value);
@@ -37,7 +38,7 @@ const Booking = () => {
     console.log(reserva);
     
     if(value[0] && value[1]){
-      fetch("http://localhost:8080/reservas", {
+      fetch(`${endpoint.url}/reservas`, {
       method: "POST",
       body: JSON.stringify(reserva),
       headers: {
@@ -55,7 +56,7 @@ const Booking = () => {
     }  
   }
   useEffect(() => {
-    axios.get(`http://localhost:8080/productos/${id}`)
+    axios.get(`${endpoint.url}/productos/${id}`)
     .then(res=> setProduct(res.data))
   }, [])
   return (

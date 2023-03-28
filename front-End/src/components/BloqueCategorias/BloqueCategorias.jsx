@@ -1,10 +1,9 @@
 import React from 'react'
 import CardBloqueCategorias from '../CardBloqueCategorias/CardBloqueCategorias'
-import categorias from '../../categorias.json'
 import './BloqueCategorias.css'
 import axios from 'axios'
 import { useEffect,useState } from 'react'
-
+import endpoint from '../../utils/endpoint.json'
 
 const BloqueCategorias = () => {
 
@@ -15,7 +14,7 @@ const BloqueCategorias = () => {
     }, [])
 
     const loadCategorias = async () => {
-        const data = await axios.get("http://localhost:8080/categorias")
+        const data = await axios.get(`${endpoint.url}/categorias`)
         setCategoria(data.data)
     }
     

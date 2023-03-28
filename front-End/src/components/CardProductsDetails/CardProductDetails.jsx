@@ -8,6 +8,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import Stars from "./Stars/Stars";
 import { Calendar } from "react-multi-date-picker";
 import { useGlobalStates } from "../../context/GlobalContext";
+import endpoint from '../../utils/endpoint.json';
 
 const CardProductDetails = () => {
   const [slider, setSlider] = useState(false);
@@ -40,7 +41,7 @@ const CardProductDetails = () => {
   
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/productos/${id}`)
+    axios.get(`${endpoint.url}/productos/${id}`)
     .then(res=> setProd(res.data))
   }, [])
 

@@ -4,6 +4,7 @@ import './login.css';
 import { Link, useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import { useGlobalStates } from "../../context/GlobalContext";
+import endpoint from '../../utils/endpoint.json';
 
 const Login = () => {
 
@@ -28,7 +29,7 @@ const Login = () => {
         email:email.value,
         password:password.value
       }
-      fetch("http://localhost:8080/api/v1/auth/authenticate", {
+      fetch(`${endpoint.url}/api/v1/auth/authenticate`, {
         method: "POST",
         body: JSON.stringify(obj),
         headers: {
