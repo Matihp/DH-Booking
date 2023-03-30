@@ -7,6 +7,8 @@ import Signup from './pages/Signup/signup';
 import ProductDetails from './pages/Product/ProductDetails';
 import Booking from './pages/Booking/Booking';
 import Sucess from './pages/Success/Sucess';
+import Administration from './pages/Administration/Administration';
+
 const App = () => {
   return (
     <div>
@@ -17,6 +19,7 @@ const App = () => {
         <Route path='/details/:id'element={<ProductDetails/>}/>
         <Route path='/details/:id/booking' element={<Booking/>}/>
         <Route path='/booking/success'element={<Sucess/>}/>
+        <Route path='/administration'element={<Administration/>} />
         <Route path="*" element={NotFound()} />
       </Routes>
       <Footer/>
