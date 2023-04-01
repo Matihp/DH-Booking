@@ -18,8 +18,9 @@ const App = () => {
         <Route path="/signup" element={<Signup/>} />
         <Route path='/details/:id'element={<ProductDetails/>}/>
         <Route path='/details/:id/booking' element={<Booking/>}/>
-        <Route path='/booking/success'element={<Sucess/>}/>
+        <Route path='/booking/success'element={<Sucess page={'booking'}/>}/>
         <Route path='/administration'element={<Administration/>} />
+        <Route path='/administration/success'element={<Sucess page={'product'}/>}/>
         <Route path="*" element={NotFound()} />
       </Routes>
       <Footer/>
