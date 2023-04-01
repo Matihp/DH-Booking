@@ -119,7 +119,9 @@ const Administration = () => {
                     </div>
                 </div>
                 <div className='containerBtnAdministration'>
-                    <button>Crear</button>
+                    <Link to={'/administration/success'}>
+                    <button className='btnAdministration'>Crear</button>
+                    </Link>  
                 </div>
             </form>
         </div>

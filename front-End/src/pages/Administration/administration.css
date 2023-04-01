@@ -75,3 +75,13 @@
     margin-top: 30px;
     margin-bottom:15px ;
 }
+.btnAdministration{
+    background-color: #F0572D;
+    color: white;
+    width: 30vw;
+}
+.btnAdministration:hover{
+    background-color: rgb(243, 56, 56);
+    transition:all 1s;
+    width: 40vw;
+}
