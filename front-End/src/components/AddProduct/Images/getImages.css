@@ -1,0 +1,10 @@
+.containerImgAdministration{
+    display: flex;
+    background-color: #eeeef1 ;
+    border-radius: 7px;
+    align-items: center;
+}
+.imgAdministration{
+    display: flex;
+    align-items: center;
+}
