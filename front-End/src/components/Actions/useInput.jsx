@@ -45,15 +45,16 @@ const Input = ({
   };
 
   return (
-    <div className={style.inputContainer}>
+    <div className={name=='text' ? style.otherInputContainer : style.inputContainer}>
       <label className={name=='text' ? style.otherLabel :style.useLabel} htmlFor={name}>
         {label}
       </label>
       <div className={style.inputChildren}>
         <input
-          className={`${name=='text' ? style.otherInput : style.useInput} ${
+          className={`${name =='text' ? style.otherInput : style.useInput} ${
             state.valid === 'false' ? style.inputError : ''
           } `}
+          style={{width: id=='link' && '480px'}}
           type={id !== 'password' ? type : viewPassword ? 'text' : 'password'}
           id={name}
           name={name}

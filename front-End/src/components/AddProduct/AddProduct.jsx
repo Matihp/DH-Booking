@@ -11,8 +11,19 @@ import GetImages from './Images/getImages.jsx';
 const AddProduct = () => {
     const [nameProp,setNameProp]=useState({ value: '', valid: null })
     const [address,setAddress]=useState({ value: '', valid: null })
+    const [description,setDescription]=useState('')
+    const [terms,setTerms]=useState({})
     const regularExpressions = {
         text: /^[a-zA-ZÀ-ÿ\s]{4,40}$/,
+      }
+      function handleSubmit(e){
+        e.preventDefault();
+        const obj={
+            name:nameProp,
+            adrs:address,
+            descript:description,
+            term:terms,
+        }
       }
   return (
     <>
@@ -27,7 +38,7 @@ const AddProduct = () => {
         </div>
         <h2 style={{marginBottom:'20px',marginTop:'30px',marginLeft:'40px'}}>Crear propiedad</h2>
         <div className='formAdministrationContainer'>  
-            <form action=""className='formAdministration'>
+            <form onSubmit={handleSubmit} action=""className='formAdministration'>
                 <div className='containerAdministration'>
                     <div>
                         <Input
@@ -41,9 +52,9 @@ const AddProduct = () => {
                         regex={regularExpressions.text}
                           />
                     </div>
-                    <div>
-                    <label htmlFor="">Categoria</label>
-                    <Dropdown data={timesInput} value={'city'}/>   
+                    <div className='dropdownAdministration'>
+                    <p style={{color:'black',marginBottom:'6px',fontWeight:'600'}}>Categoria</p>
+                    <Dropdown data={timesInput} value={'city'} admin={true}/>   
                     </div>
                     <div>
                         <Input
@@ -57,14 +68,14 @@ const AddProduct = () => {
                             regex={regularExpressions.text}
                         />
                     </div>
-                    <div>
-                    <label htmlFor="">Ciudad</label>
-                    <Dropdown data={timesInput} value={'city'}/>   
+                    <div className='dropdownAdministration'>
+                    <p style={{color:'black',marginBottom:'6px',fontWeight:'bold'}}>Ciudad</p>
+                    <Dropdown data={timesInput} value={'city'} admin={true}/>   
                     </div>  
                 </div>                
                 <div className='administration'>
-                    <label htmlFor="">Descripción</label>
-                    <textarea className='tAreaAdministration' name="" id="" cols="30" rows="10" placeholder='Escribir aqui'></textarea>
+                    <label style={{fontWeight:'bold'}} htmlFor="">Descripción</label>
+                    <textarea onChange={()=>setDescription(e.target.value)} className='tAreaAdministration' minLength={5} required name="" id="" cols="30" rows="10" placeholder='Escribir aqui'></textarea>
                 </div>
                 <div>
                     <h3 style={{paddingLeft:'25px',paddingTop:'5px',paddingBottom:'10px'}}>Politicas del producto</h3>
@@ -73,26 +84,28 @@ const AddProduct = () => {
                             <div>
                                 <h4>Normas de la casa</h4>
                                 <p style={{color:'black',marginTop:'15px'}}>Descripción</p>
-                                <textarea className='tAdministrationTerms' name="" id="" cols="30" rows="10"></textarea>
+                                <textarea onChange={()=>setTerms(e.target.value)} className='tAdministrationTerms' minLength={5} required name="" id="" cols="30" rows="10"></textarea>
                             </div>
                             <div>
                                 <h4>Salud y seguridad</h4>
                                 <p style={{color:'black',marginTop:'15px'}}>Descripción</p>
-                                <textarea className='tAdministrationTerms' name="" id="" cols="30" rows="10"></textarea>
+                                <textarea onChange={()=>setTerms(e.target.value)} className='tAdministrationTerms'minLength={5} required name="" id="" cols="30" rows="10"></textarea>
                             </div>
                             <div>
                                 <h4>Politica de cancelación</h4>
                                 <p style={{color:'black',marginTop:'15px'}}>Descripción</p>
-                                <textarea className='tAdministrationTerms' name="" id="" cols="30" rows="10"></textarea>
+                                <textarea onChange={()=>setTerms(e.target.value)} className='tAdministrationTerms'minLength={5} required name="" id="" cols="30" rows="10"></textarea>
                             </div>
                         </div>
                     </div>    
                 </div>
                 <GetImages/>
-                <div className='containerBtnAdministration'>
-                    <Link to={'/administration/success'}>
-                    <button className='btnAdministration'>Crear</button>
-                    </Link>  
+                <div className='containerBtnAdministration'>                  
+                     <button className='btnAdministration'>
+                        <Link to={'/administration/success'}style={{textDecoration:'none'}}>
+                        Crear
+                        </Link> 
+                    </button>
                 </div>
             </form>
         </div>
