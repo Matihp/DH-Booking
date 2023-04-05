@@ -40,7 +40,7 @@ const Signup = () => {
             headers: {
               "Content-type": "application/json; charset=UTF-8"
             }})
-            .then((response) =>  response.json())
+            .then((response) =>  response.text())
             .then((res) => {
               console.log(res);
               alert(name.value+' '+lastName.value+',tu registro con el correo '+email.value+' ha sido completado con exito ')

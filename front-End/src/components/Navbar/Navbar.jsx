@@ -4,14 +4,14 @@ import { useState,useEffect } from 'react'
 import transition from "react-element-popper/animations/transition"
 import axios from 'axios'
 import Dropdown from './Dropdown/Dropdown'
-import { useGlobalStates } from '../../context/GlobalContext'
 import endpoint from '../../utils/endpoint.json'
+import { useGlobalStates } from '../../context/GlobalContext'
 
 const Navbar = () => {
 
   const [ciudad, setCiudad] = useState([])
   const [data,setData]=useState([])
-  const {pressBtn,setPressBtn}=useGlobalStates()
+  const {pressBtn,setPressBtn, ciudades, setCiudades}=useGlobalStates()
 
   useEffect(() =>  {
       loadCategorias()
@@ -20,6 +20,7 @@ const Navbar = () => {
   const loadCategorias = async () => {
       const data = await axios.get(`${endpoint.url}/ciudades`)
       setCiudad(data.data)
+      setCiudades(data.data)
   }
   const [value, setValue] = useState([])
 

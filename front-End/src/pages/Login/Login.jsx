@@ -44,8 +44,10 @@ const Login = () => {
                   last_name:res.last_name,
                   email:res.email,
                   token:res.token,
-                  valid:true})})
-        navigate('/')
+                  valid:true,
+              })
+              navigate('/') 
+            })
         .catch((err) => {
           console.log(err);
           setError(true)

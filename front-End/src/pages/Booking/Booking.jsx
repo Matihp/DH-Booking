@@ -10,14 +10,16 @@ import axios from "axios";
 import { useGlobalStates } from "../../context/GlobalContext";
 import timesInput from '../../utils/times.json';
 import endpoint from '../../utils/endpoint.json';
+import { useNavigate } from "react-router-dom";
 
 const Booking = () => {
   const [value, setValue] = useState([]);
   const [product,setProduct]=useState();
-  const {time, data}=useGlobalStates();
+  const {time, data, succes, setSucces}=useGlobalStates();
   const [error,setError]=useState(false);
   const weekDays = ["D", "L", "M", "M", "J", "V", "S"];
   const months = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre",];
+  const navigate = useNavigate()
 
   const {id}=useParams();
 
@@ -43,11 +45,12 @@ const Booking = () => {
       body: JSON.stringify(reserva),
       headers: {
         'Content-type': 'application/json',
-        'Cookie': `jwt=${data.token}`
+        'Authotization': `Bearer ${data.token}`
       }})
       .then((response) =>  response.text())
       .then((res) => {
-        console.log(res);
+        setSucces("booking")
+        navigate('/booking/success')
       })
       .catch((err) => {
         console.log(err);

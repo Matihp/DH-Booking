@@ -33,6 +33,14 @@
     gap: 10px;
     width: 100vw;
 }
+.verticalLine{
+    width: 2.5px;
+    height: 8vh;
+    background-color: red;
+    color: red;
+    margin-left: 20px;
+    margin-right: 10px;
+}
 .h4Header{
     width: 10vw;
 }

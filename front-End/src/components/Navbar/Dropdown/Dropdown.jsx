@@ -4,7 +4,7 @@ import './dropdown.css'
 
 const Dropdown = ({data,value,admin}) => {
     const [open,setOpen]=useState(false)
-    const {cities,setCities,time,setTime,cat,setCat}=useGlobalStates()
+    const {cities,setCities,time,setTime,cat,setCat, setCiudadId, setCategoriaId, categoriaId, ciudadId}=useGlobalStates()
 
     function handleClick(e){
         setOpen(!open)
@@ -49,7 +49,8 @@ const Dropdown = ({data,value,admin}) => {
                 className='dropdown-item'
                 onClick={()=>{
                   setCities(data)
-                  setOpen(false)  
+                  setCiudadId(data.id) 
+                  setOpen(false) 
                 }}
                 key={data.id}
                 >
@@ -88,6 +89,7 @@ const Dropdown = ({data,value,admin}) => {
                 className='dropdown-item'
                 onClick={()=>{
                   setCat(data)
+                  setCategoriaId(data.id)
                   setOpen(false)  
                 }}
                 key={data.id}

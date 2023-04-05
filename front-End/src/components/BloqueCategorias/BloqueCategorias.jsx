@@ -4,10 +4,13 @@ import './BloqueCategorias.css'
 import axios from 'axios'
 import { useEffect,useState } from 'react'
 import endpoint from '../../utils/endpoint.json'
+import { useGlobalStates } from '../../context/GlobalContext'
 
 const BloqueCategorias = () => {
 
     const [categoria, setCategoria] = useState([])
+    const {categorias, setCategorias} = useGlobalStates()
+    
 
     useEffect(() =>  {
         loadCategorias()
@@ -16,6 +19,7 @@ const BloqueCategorias = () => {
     const loadCategorias = async () => {
         const data = await axios.get(`${endpoint.url}/categorias`)
         setCategoria(data.data)
+        setCategorias(data.data)
     }
     
     return (
