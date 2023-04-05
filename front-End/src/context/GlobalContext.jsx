@@ -5,7 +5,7 @@ export const ContextGlobal = createContext();
 
 export const ContextProvider = ({ children }) => {
 
-  const [data,setData]=useState({id:0, first_name:"", last_name:"", email:"", token:"", valid: false});
+  const [data,setData]=useState({id:0, first_name:"", last_name:"", email:"", token:"", valid: false, roles:[]});
   const [pressCategory,setPressCategory]=useState(false);
   const [category,setCategory]=useState(null);
   const [cities,setCities]=useState(null);
@@ -14,11 +14,21 @@ export const ContextProvider = ({ children }) => {
   const [validateLogin,setValidateLogin]=useState(false)
   const [validateSvg,setValidateSvg]=useState(false)
   const [cat,setCat]=useState(null)
+  const [images,setImages]=useState([])
+  const [succes, setSucces] = useState("")
+  const [categorias, setCategorias] = useState([])
+  const [ciudades, setCiudades] = useState([])
+  const [categoriaId, setCategoriaId] = useState(null)
+  const [ciudadId, setCiudadId] = useState(null)
+  const [caracteristicas, setCaracteristicas] = useState([])
+  const [atributos, setAtributos] = useState([])
 
   return (
     <ContextGlobal.Provider
     value={{data,setData,pressCategory,setPressCategory,category,setCategory,cities,setCities,
-      pressBtn,setPressBtn,time,setTime,validateLogin,setValidateLogin,validateSvg,setValidateSvg,cat,setCat}}
+      pressBtn,setPressBtn,time,setTime,validateLogin,setValidateLogin,validateSvg,setValidateSvg
+      ,cat,setCat,images,setImages,succes,setSucces, categorias,setCategorias, ciudades,setCiudades,
+      categoriaId, setCategoriaId, ciudadId, setCiudadId,caracteristicas,setCaracteristicas, atributos, setAtributos }}
     >
       {children}
     </ContextGlobal.Provider>

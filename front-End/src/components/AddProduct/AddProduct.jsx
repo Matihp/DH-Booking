@@ -4,18 +4,26 @@ import Header from '../Header/Header.jsx';
 import Dropdown from '../Navbar/Dropdown/Dropdown.jsx';
 import imgFlecha from "../../img/flecha-izquierda.png";
 import './addProduct.css'
-import timesInput from '../../utils/times.json'
 import Input from '../Actions/useInput.jsx';
 import GetImages from './Images/getImages.jsx';
 import GetAttributes from './Attributes/getAttributes.jsx';
-import categorias from '../../utils/categorias.json'
+import { useGlobalStates } from '../../context/GlobalContext.jsx';
+import endpoint from '../../utils/endpoint.json'
 
 const AddProduct = () => {
     const [nameProp,setNameProp]=useState({ value: '', valid: null })
     const [address,setAddress]=useState({ value: '', valid: null })
     const [description,setDescription]=useState('')
-    const [terms,setTerms]=useState({})
+    const [tituloDescripcion, setTituloDescripcion] = useState('')
+    const [terms,setTerms]=useState(null)
+    const [terms1,setTerms1]=useState(null)
+    const [terms2,setTerms2]=useState(null)
+    const [errorImg,setErrorImg]=useState(false)
+    const [errorCategory,setErrorCategory]=useState(false)
+    const {images, ciudades, categorias, ciudadId, categoriaId, atributos, setSucces, data}=useGlobalStates()
     const navigate=useNavigate()
+    const [caracs, setCaracs] = useState([])
+    const [imgs, setImgs] = useState([])
     
     const regularExpressions = {
         text: /^[a-zA-ZÀ-ÿ\s]{4,40}$/,
@@ -23,13 +31,59 @@ const AddProduct = () => {
       }
       function handleSubmit(e){
         e.preventDefault();
-        const obj={
-            name:nameProp,
-            adrs:address,
-            descript:description,
-            term:terms,
+        if (images.length < 5) {
+            setErrorImg(true)
+            return
+          }
+        if(categorias !==null && ciudades !==null){
+
+        }else{
+            setErrorCategory(true)
+            return
         }
-        navigate('/administration/success')
+        if(nameProp.valid == 'true') {
+
+        }
+
+        const imageness = [
+        {url: images[0][0].value, titulo: images[0][1].value},
+        {url: images[1][0].value, titulo: images[1][1].value},
+        {url: images[2][0].value, titulo: images[2][1].value},
+        {url: images[3][0].value, titulo: images[3][1].value},
+        {url: images[4][0].value, titulo: images[4][1].value}
+    ]
+
+
+        const obj={
+            titulo:nameProp.value,
+            categoria:{id:categoriaId},
+            ciudad:{id:ciudadId},
+            caracteristicas:atributos,
+            listImagen:imageness,
+            tituloDescripcion:tituloDescripcion,
+            descripcion:description,
+            politicaLugar:terms,
+            politicaSaludSeguridad:terms1,
+            politicaCancelacion:terms2,
+        }
+
+        console.log(obj);
+
+        fetch(`${endpoint.url}/productos`, {
+            method: "POST",
+            body: JSON.stringify(obj),
+            headers: {
+              'Content-type': 'application/json',
+              'Authotization': `Bearer ${data.token}`
+            }})
+            .then((response) =>  response.text())
+            .then((res) => {
+                setSucces('product')
+                navigate('/administration/success')
+            })
+            .catch((err) => {
+              console.log(err);
+            })
       }
   return (
     <>
@@ -76,14 +130,18 @@ const AddProduct = () => {
                     </div>
                     <div className='dropdownAdministration'>
                         <p style={{color:'black',marginBottom:'6px',fontWeight:'bold'}}>Ciudad</p>
-                        <Dropdown data={timesInput} value={'city'} admin={true}/>   
+                        <Dropdown data={ciudades} value={'city'} admin={true}/>   
                     </div>  
-                </div>                
+                </div>      
+                <div className='administration'>
+                    <label style={{fontWeight:'bold'}} htmlFor="">Titulo Descripcion</label>
+                    <textarea onChange={(e)=>setTituloDescripcion(e.target.value)} className='tAreaAdministration' minLength={5} required name="" id="" cols="30" rows="10" placeholder='Escribir aqui'></textarea>
+                </div>          
                 <div className='administration'>
                     <label style={{fontWeight:'bold'}} htmlFor="">Descripción</label>
                     <textarea onChange={(e)=>setDescription(e.target.value)} className='tAreaAdministration' minLength={5} required name="" id="" cols="30" rows="10" placeholder='Escribir aqui'></textarea>
                 </div>
-                {/* <GetAttributes/> */}
+                <GetAttributes/> 
                 <div>
                     <h3 className='h3Admin'>Politicas del producto</h3>
                     <div className='containerAdministrationTerms'>
@@ -96,22 +154,33 @@ const AddProduct = () => {
                             <div className='marTerms'>
                                 <h4>Salud y seguridad</h4>
                                 <p style={{color:'black',marginTop:'15px'}}>Descripción</p>
-                                <textarea onChange={(e)=>setTerms(e.target.value)} className='tAdministrationTerms'minLength={5} required name="" id="" cols="30" rows="10"></textarea>
+                                <textarea onChange={(e)=>setTerms1(e.target.value)} className='tAdministrationTerms'minLength={5} required name="" id="" cols="30" rows="10"></textarea>
                             </div>
                             <div className='marTerms'>
                                 <h4>Politica de cancelación</h4>
                                 <p style={{color:'black',marginTop:'15px'}}>Descripción</p>
-                                <textarea onChange={()=>setTerms(e.target.value)} className='tAdministrationTerms'minLength={5} required name="" id="" cols="30" rows="10"></textarea>
+                                <textarea onChange={(e)=>setTerms2(e.target.value)} className='tAdministrationTerms'minLength={5} required name="" id="" cols="30" rows="10"></textarea>
                             </div>
                         </div>
                     </div>    
                 </div>
                 <GetImages/>
+                {errorImg && (
+                    <div className='containerErrorImg'>
+                      <p className='errorImg'>Debe agregar cinco imagenes</p>  
+                    </div>
+                )}
+                {errorCategory && (
+                    <div className='containerErrorImg'>
+                      <p className='errorImg'>Falta agregar la categoria o la ciudad</p>  
+                    </div>
+                )}
                 <div className='containerBtnAdministration'>                  
                     <button className='btnAdministration'>
                         Crear               
                     </button>
                 </div>
+                
             </form>
         </div>
     </>

@@ -6,28 +6,35 @@ import { useGlobalStates } from '../../../context/GlobalContext'
 const GetImages = () => {
     const [img,setImg]=useState({ value: '', valid: null })
     const [descrip,setDescrip]=useState({ value: '', valid: null })
-    const [images,setImages]=useState([])
-    const [svg,setSvg]=useState(false)
-    const {validateSvg}=useGlobalStates()    
+    const {validateSvg,images,setImages}=useGlobalStates()  
 
     const regularExpressions = {
         url: /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,130}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/,
         text: /^[a-zA-ZÀ-ÿ\s]{4,40}$/,
       }
-    function isValid(){
-        if (regularExpressions.url.test(urlValue)) {
-            //console.log('Successful match');
+    function isValidUrl(url,text){
+        if (regularExpressions.url.test(url) && regularExpressions.text.test(text)) {
             return true;
           } else {
-            //console.log('No match');
-            // setMsgError('El formato de la URL es invalido');
             return false;
           }
     }
     function handleClick(){
-        setImages([...images,  [{...img,valid:'true'},{ ...descrip,valid:'true'}]]);
-        setImg({value: '', valid: null});
-        setDescrip({value: '', valid: null})
+        const valid=isValidUrl(img.value,descrip.value)
+        if(valid){
+            setImages([...images, [{...img,valid:'true'},{ ...descrip,valid:'true'}]]);
+            console.log(images);
+            setImg({value: '', valid: null});
+            setDescrip({value: '', valid: null}) 
+        }else{
+            setImg((e) => {
+                return { ...e, valid: 'false' };
+            });
+            setDescrip((e) => {
+                return { ...e, valid: 'false' };
+            });
+            console.log('error')
+        } 
         console.log(images)
     }
     function handleDelete(imgUrl,imgDesc){
