@@ -1,0 +1,10 @@
+.containerAttributes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.attributes{
+    width: 85vw;
+    background-color: #eeeef1;
+    border-radius: 7px;
+}
