@@ -12,11 +12,13 @@ export const ContextProvider = ({ children }) => {
   const [pressBtn,setPressBtn]=useState(true);
   const [time,setTime]=useState(null)
   const [validateLogin,setValidateLogin]=useState(false)
+  const [validateSvg,setValidateSvg]=useState(false)
+  const [cat,setCat]=useState(null)
 
   return (
     <ContextGlobal.Provider
     value={{data,setData,pressCategory,setPressCategory,category,setCategory,cities,setCities,
-      pressBtn,setPressBtn,time,setTime,validateLogin,setValidateLogin}}
+      pressBtn,setPressBtn,time,setTime,validateLogin,setValidateLogin,validateSvg,setValidateSvg,cat,setCat}}
     >
       {children}
     </ContextGlobal.Provider>
