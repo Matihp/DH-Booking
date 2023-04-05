@@ -42,6 +42,9 @@
     margin-left: 35px;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
   }
+  .input3{
+    width: 480px;
+  }
    .iconVisibility {
     position: absolute;
     bottom: 12px;
@@ -70,14 +73,30 @@
   .inputError:focus {
     border: none;
   }
-  @media (min-width: 768px) {
+  @media (max-width: 768px) {
     .inputContainer {
       width: 346px;
+    }
+    .otherInput{
+      width: 250px;
+    }
+    .input3{
+      width: 200px;
     }
   }
   @media (max-width: 480px) {
     .inputContainer {
       width: 290px;
+    }
+    .otherInput{
+      width: 490px;
+      margin-right: 40px;
+    }
+    .otherInputContainer{
+      margin-top: 10px;
+    }
+    .input3{
+      width: 370px;
     }
   }
   

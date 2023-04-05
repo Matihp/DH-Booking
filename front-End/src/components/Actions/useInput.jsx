@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import style from './input.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
+import { useGlobalStates } from '../../context/GlobalContext'
 
 const Input = ({
   state,
@@ -15,9 +16,11 @@ const Input = ({
   regex,
   executeFunction,
   readonly,
+  on,
 }) => {
   const [viewPassword, setViewPassword] = useState(false);
   const [changeType, setChangeType] = useState(null);
+  const {setValidateSvg}=useGlobalStates()
 
   const onChange = (e) => {
       changeState({ ...state, value: e.target.value })
@@ -43,7 +46,6 @@ const Input = ({
       executeFunction()
     }
   };
-
   return (
     <div className={name=='text' ? style.otherInputContainer : style.inputContainer}>
       <label className={name=='text' ? style.otherLabel :style.useLabel} htmlFor={name}>
@@ -52,9 +54,8 @@ const Input = ({
       <div className={style.inputChildren}>
         <input
           className={`${name =='text' ? style.otherInput : style.useInput} ${
-            state.valid === 'false' ? style.inputError : ''
-          } `}
-          style={{width: id=='link' && '480px'}}
+            state.valid === 'false' ? style.inputError : ''}
+            ${id =='link' ? style.input3 : style.useInput} `}
           type={id !== 'password' ? type : viewPassword ? 'text' : 'password'}
           id={name}
           name={name}
@@ -94,6 +95,8 @@ const Input = ({
       {state.valid === 'false' && (
         <span className={style.msgError}>{error}</span>
       )}
+      {state.valid === 'false' && setValidateSvg(true)}
+      {state.valid === 'true'  && setValidateSvg(false)}
     </div>
   )
 }
