@@ -28,7 +28,7 @@ const GetAttributes = () => {
             <div className='containerAttributesInput'>
               <div className='inptImgAttributes'>
                 <img style={{height:"25px",width:"25px"}} src={c.icono} alt="logo"/>
-              <label> {c.nombre}</label>
+                <label style={{fontWeight:'bolder'}}> {c.nombre}</label>
               </div>
               <div className='inputAttributes'>
                 <input style={{marginTop:'5px',marginLeft:'5px'}} onChange={(e) => {

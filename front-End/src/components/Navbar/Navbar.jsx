@@ -11,7 +11,7 @@ const Navbar = () => {
 
   const [ciudad, setCiudad] = useState([])
   const [data,setData]=useState([])
-  const {pressBtn,setPressBtn, ciudades, setCiudades}=useGlobalStates()
+  const {pressBtn,setPressBtn, ciudades, setCiudades, setFechaInicio, setFechaFinal}=useGlobalStates()
 
   useEffect(() =>  {
       loadCategorias()
@@ -26,6 +26,9 @@ const Navbar = () => {
 
   function handleChange(value){
     setValue(value)
+    console.log(value);
+    setFechaInicio(`${value[0]?.year}-${value[0]?.month?.number}-${value[0]?.day}`)
+    setFechaFinal(`${value[1]?.year}-${value[1]?.month?.number}-${value[1]?.day}`)
   }
   function handleSubmit(e){
     e.preventDefault()
@@ -34,6 +37,7 @@ const Navbar = () => {
     e.preventDefault()
     setPressBtn(!pressBtn)
   }
+
   return (
   <div className='navBar'>
     <h1 className='h1Navbar' style={{color:"white",marginBottom:'20px'}}>Busca ofertas en hoteles, casas y mucho más</h1>

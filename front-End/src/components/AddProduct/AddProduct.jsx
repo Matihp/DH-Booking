@@ -20,10 +20,10 @@ const AddProduct = () => {
     const [terms2,setTerms2]=useState(null)
     const [errorImg,setErrorImg]=useState(false)
     const [errorCategory,setErrorCategory]=useState(false)
-    const {images, ciudades, categorias, ciudadId, categoriaId, atributos, setSucces, data}=useGlobalStates()
+    const {images, ciudades, categorias, ciudadId, categoriaId, atributos, setSucces, data,cat,cities}=useGlobalStates()
     const navigate=useNavigate()
-    const [caracs, setCaracs] = useState([])
-    const [imgs, setImgs] = useState([])
+    const [errorNameAd,setErrorNameAd]=useState(false)
+    const [errorAttributes,setErrorAttributes]=useState(false)
     
     const regularExpressions = {
         text: /^[a-zA-ZÀ-ÿ\s]{4,40}$/,
@@ -35,16 +35,18 @@ const AddProduct = () => {
             setErrorImg(true)
             return
           }
-        if(categorias !==null && ciudades !==null){
-
-        }else{
+        if(cities ==null || cat ==null){
             setErrorCategory(true)
             return
         }
-        if(nameProp.valid == 'true') {
-
+        if(nameProp.valid !== 'true' || address.valid !== 'true') {
+            setErrorNameAd(true)
+            return
         }
-
+        if(atributos.length<1){
+            setErrorAttributes(true)
+            return
+        }
         const imageness = [
         {url: images[0][0].value, titulo: images[0][1].value},
         {url: images[1][0].value, titulo: images[1][1].value},
@@ -52,8 +54,6 @@ const AddProduct = () => {
         {url: images[3][0].value, titulo: images[3][1].value},
         {url: images[4][0].value, titulo: images[4][1].value}
     ]
-
-
         const obj={
             titulo:nameProp.value,
             categoria:{id:categoriaId},
@@ -174,6 +174,16 @@ const AddProduct = () => {
                     <div className='containerErrorImg'>
                       <p className='errorImg'>Falta agregar la categoria o la ciudad</p>  
                     </div>
+                )}
+                {errorNameAd && (
+                    <div className='containerErrorImg'>
+                      <p className='errorImg'>Falta agregar el nombre o la dirección</p>  
+                     </div>
+                )}
+                {errorAttributes && (
+                    <div className='containerErrorImg'>
+                       <p className='errorImg'>Falta agregar uno o más atributos</p>  
+                     </div>
                 )}
                 <div className='containerBtnAdministration'>                  
                     <button className='btnAdministration'>

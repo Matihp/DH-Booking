@@ -4,6 +4,8 @@ import './signup.css';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import endpoint from '../../utils/endpoint.json';
+import Swal from "sweetalert2";
+
 
 const Signup = () => {
   const [name, setName] = useState({ value: '', valid: null });
@@ -11,10 +13,10 @@ const Signup = () => {
   const [email, setEmail] = useState({ value: '', valid: null });
   const [password, setPassword] = useState({ value: '', valid: null });
   const [password2, setPassword2] = useState({ value: '', valid: null });
-
   const [isValid, setisValid] = useState(null);
   const [msgError, setMsgError] = useState('');
   const [error,setError]=useState(false);
+
 
   const regularExpressions = {
     nameAndLastName: /^[a-zA-ZÀ-ÿ\s]{4,40}$/, 
@@ -42,9 +44,8 @@ const Signup = () => {
             }})
             .then((response) =>  response.text())
             .then((res) => {
-              console.log(res);
-              alert(name.value+' '+lastName.value+',tu registro con el correo '+email.value+' ha sido completado con exito ')
-              })
+              mostrarAlerta() 
+            })
             .catch((err) => {
               console.log(err);
               setError(true)
@@ -111,6 +112,14 @@ const Signup = () => {
     }
   }
 
+  const mostrarAlerta = () => {
+    Swal.fire({
+        title:"Usario Registrado exitosamente",
+        text:"Muchas gracias por elegirnos!",
+        icon:'success',
+        timer:'25000',
+    })}
+
   return (
     <>
     <Header onChange={'signup'}/>
@@ -130,7 +139,7 @@ const Signup = () => {
                 type="text"
                 id="name"
                 name="name"
-                error="Sólo se permiten letras"
+                error="Sólo se permiten letras y mínimo cuatro carácteres"
                 regex={regularExpressions.nameAndLastName}
               />
               <Input
@@ -140,7 +149,7 @@ const Signup = () => {
                 type="text"
                 id="lastName"
                 name="lastName"
-                error="Sólo se permiten letras"
+                error="Sólo se permiten letras y mínimo cuatro carácteres"
                 regex={regularExpressions.nameAndLastName}
               />
             </div>

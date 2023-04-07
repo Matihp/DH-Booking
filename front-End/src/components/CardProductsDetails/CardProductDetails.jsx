@@ -23,7 +23,7 @@ const CardProductDetails = () => {
   const [prod, setProd] = useState()
 
   function redirect(){
-    if(data.token==''){
+    if(!data.valid){//data.token==''
         setValidateLogin(true)
         navigate('/login')
     }else{
