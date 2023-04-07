@@ -2,8 +2,8 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import Layout from './components/Layout';
-import Login from './pages/Login/login';
-import Signup from './pages/Signup/signup';
+import Login from './pages/Login/Login';
+import Signup from './pages/Signup/Signup';
 import ProductDetails from './pages/Product/ProductDetails';
 import Booking from './pages/Booking/Booking';
 import Sucess from './pages/Success/Sucess';

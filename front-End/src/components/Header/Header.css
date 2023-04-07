@@ -36,10 +36,18 @@
 .verticalLine{
     width: 2.5px;
     height: 8vh;
-    background-color: red;
-    color: red;
+    background-color: rgb(241, 71, 71);
+    color: rgb(241, 71, 71);
     margin-left: 20px;
     margin-right: 10px;
+}
+.pAdminHeader{
+    cursor: pointer;
+    font-weight: bolder;
+}
+.pAdminHeader:hover{
+    color: #F0572D;
+   
 }
 .h4Header{
     width: 10vw;

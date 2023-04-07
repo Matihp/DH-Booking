@@ -6,6 +6,7 @@ import { useGlobalStates } from '../../context/GlobalContext';
 import axios from 'axios';
 import Header from '../Header/Header';
 import CardReservas from './CardReserva';
+import endpoint from '../../utils/endpoint.json'
 
 const ListReservas = () => {
     const { data } = useGlobalStates()
@@ -14,11 +15,14 @@ const ListReservas = () => {
 
 
     const loadReservas = async () => {
-        const r = await axios.get(`http://localhost:8080/reservas/user/${data.id}`)
+        const r = await axios.get(`${endpoint.url}/reservas/user/${data.id}`)
         .then((data) => {
             setReservas(data.data)
             console.log(data.data);
             console.log(reservas);
+        })
+        .catch((err) => {
+          setVacio("VACIA")
         })
     }
 
@@ -45,7 +49,7 @@ const ListReservas = () => {
     <h1 className='centro'>Mis reservas</h1>
         <div className='container2'>
         {reservas?.map((r)=> <CardReservas key={r.id} titulo={r.producto.titulo} fechaInicio={r.fechaInicio} fechaFinal={r.fechaFinal} imagen={r.producto.listImagen[0].url}/>)}
-        {/* {vacio === "VACIA" ? mostrarAlerta() : ""} */}
+        {vacio === "VACIA" ? mostrarAlerta() : ""}
         </div>
     </div>
     </>

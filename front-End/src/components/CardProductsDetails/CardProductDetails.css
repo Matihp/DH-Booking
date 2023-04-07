@@ -196,6 +196,9 @@ hr{
     transition-delay: 0.06s;
 }
 @media (max-width: 768px) {
+    .containerProductName{
+        width: 96vw;
+    }
     .flechaProduct{
         width: 8vw;
     }
