@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import './reservas.css'
 
 const CardReservas = ({titulo,fechaInicio,fechaFinal,imagen}) => {
   return (
