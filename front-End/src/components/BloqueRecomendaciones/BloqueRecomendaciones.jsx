@@ -25,9 +25,9 @@ const BloqueRecomendaciones = () => {
 
   useEffect(()=>{
     if(cities !== null){
-      const data = axios.get(`${endpoint.url}/productos/dateCiudad?fechaInicio=${fechaInicio}&fechaFinal=${fechaFinal}&ciudadId=${cities.id}`)
-      .then(data => setFilterRecomend(data.data))
-      console.log(data);
+      // const data = axios.get(`${endpoint.url}/productos/dateCiudad?fechaInicio=${fechaInicio}&fechaFinal=${fechaFinal}&ciudadId=${cities.id}`)
+      // .then(data => setFilterRecomend(data.data))
+      // console.log(data);
       setFilterRecomendation(recomendacion.filter((rec)=>rec.ciudad.nombre_ciudad==cities.nombre_ciudad))
     }
     setValid(true)

@@ -68,7 +68,7 @@ const Booking = () => {
       <div className="containerBooking">
         <div className="containerProductName">
           <div style={{ width: "100vw" }}>
-            <p>{product?.categoria.titulo}</p>
+            <p>{product?.categoria?.titulo}</p>
             <h1>{product?.titulo}</h1>
           </div>
           <Link to={"/"}>
@@ -173,7 +173,7 @@ const Booking = () => {
             <h2 style={{textAlign:'center',margin:'20px'}}>Detalle de la reserva</h2>
             <img className="imgBookingDetails" src={product?.listImagen[0].url} alt="" />
             <div className="bookingDetails">
-              <p style={{color:'gray',fontSize:'14px',fontWeight:'bold',marginLeft:'0.6px'}}>HOTEL</p>
+              <p style={{color:'gray',fontSize:'14px',fontWeight:'bold',marginLeft:'0.6px'}}>{product?.categoria?.titulo}</p>
               <h2 style={{marginTop:'-6px'}}>{product?.titulo}</h2>
               <Stars/>
               <p style={{color:'black',display:'flex',marginTop:'20px',fontWeight:'bold',fontSize:'14px'}}>
