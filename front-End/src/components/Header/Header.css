@@ -77,6 +77,10 @@
     .h4Header{
         width: 20vw;
     }
+    .verticalLine{
+        height: 4vh;
+        margin-left: 5px;
+    }
     
   }
   @media (max-width: 480px) {
