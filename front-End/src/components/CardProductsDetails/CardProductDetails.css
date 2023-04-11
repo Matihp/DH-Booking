@@ -275,13 +275,13 @@ hr{
         width: 3vw;
      }
      .containerProductName{
-        width: 145vw;
+        width: 151vw;
      }
      .containerProductDetails{
         width: 165vw;
      }
      .divProductDetails{
-        width: 145.5vw;
+        width: 151.5vw;
      }
      .productDescription{
         width: 150vw;
@@ -290,7 +290,7 @@ hr{
      }
      .containerProductTerms{
         display:flex ;
-        height: 25vh;
+        height: 35vh;
         width: 152vw;
      }
      .productTerms{

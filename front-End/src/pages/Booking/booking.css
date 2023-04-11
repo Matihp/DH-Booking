@@ -49,12 +49,14 @@
 }
 .containerBookingCalendar{
     margin: 30px 0px 0px 30px;
-    height: 50vh;
-    
+    height: 50vh;  
 }
 .bookingCalendar{
     height: 50vh;
     width: 61vw;
+}
+.mobileBookingCalendar{
+    display: none;
 }
 .containerBookingTime{
     margin: 40px 0px 0px 30px;
@@ -159,8 +161,16 @@
     .containerBooking{
         width: 165vw;
     }
+    .bookingCalendar{
+      display: none;
+    }
     .containerBookingCalendar{
-        display: none;
+        height: 45vh;
+    }
+    .mobileBookingCalendar{
+        height: 50vh;
+        width: 61vw;
+        display: block;
     }
     .bookingForm{
         width: 145vw;

@@ -17,6 +17,9 @@
     align-items:center;
     justify-content:center;
 }
+.containerSideMenu{
+    display: none;
+}
 .header{
     position: sticky;
     top:0;
@@ -89,6 +92,10 @@
   @media (max-width: 480px) {
     .containerHeader{
         margin-right: 0px;
+        display: none;
+    }
+    .containerSideMenu{
+        display: block;
     }
     .headerText{
         display: none;
