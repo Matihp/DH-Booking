@@ -156,11 +156,11 @@ const CardProductDetails = () => {
        <ProductSlider product={prod}/>
       </div>
       <div style={{ marginLeft: "20px",opacity: slider ? '0.3' : '' }}>
-        <h2 style={{ fontSize: "2rem", fontWeight: "bolder",marginBottom:'30px',marginTop:'30px'}}>
+        <h2 className="justifyWord" style={{ fontSize: "2rem", fontWeight: "bolder",marginBottom:'30px',marginTop:'30px'}}>
           {prod?.tituloDescripcion}
         </h2>
         <div className="productDescription">
-          <p style={{color:'black'}}> {prod?.descripcion}</p>
+          <p className="justifyWord" style={{color:'black'}}> {prod?.descripcion}</p>
           <p style={{color:'black'}}>Nuestros clientes dicen que esta parte de Buenos Aires es su favorita, según los comentarios independientes.
           </p>
           <p style={{color:'black'}}>El hotel es un hotel sofisticado de 4 estrellas que goza de una ubicacion tranquila,a poca distancia de prestigiosas Galerias
@@ -187,15 +187,15 @@ const CardProductDetails = () => {
           <div className="containerProductTerms">
             <div className="productTerms">
               <h3 style={{marginBottom:'15px'}}>Normas de la casa</h3>
-              <p style={{color:'black',}}>{prod?.politicaLugar}</p>
+              <p className="justifyWord" style={{color:'black',}}>{prod?.politicaLugar}</p>
             </div>
             <div className="productTerms">
               <h3 style={{marginBottom:'15px'}}>Salud y seguridad</h3>
-              <p style={{color:'black',}}>{prod?.politicaSaludSeguridad}</p>
+              <p className="justifyWord" style={{color:'black',}}>{prod?.politicaSaludSeguridad}</p>
             </div>
             <div className="productTerms">
               <h3 style={{marginBottom:'15px'}}>Politica de cancelacion</h3>
-              <p style={{color:'black',}}>{prod?.politicaCancelacion}</p>
+              <p className="justifyWord" style={{color:'black',}}>{prod?.politicaCancelacion}</p>
             </div>
           </div>
         </div>
@@ -214,6 +214,15 @@ const CardProductDetails = () => {
             disableMonthPicker
             disableYearPicker
             minDate={new Date()}
+            mapDays={({ date }) => {
+              let isWeekend = [0, 6].includes(date.weekDay.index)
+              
+              if (isWeekend) return {
+                disabled: true,
+                style: { color: "#ccc" },
+                onClick: () => alert("weekends are disabled")
+              }
+            }}
           />
           <div className="productReserve">
             <p style={{color:'black',fontWeight:'600'}}>Agrega tus fechas de viaje para obtener precios exactos</p>

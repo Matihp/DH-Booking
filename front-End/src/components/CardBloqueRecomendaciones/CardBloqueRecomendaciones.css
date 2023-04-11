@@ -54,6 +54,11 @@
 @media (max-width: 768px) {
     .bloqueRecomendaciones{
         width: 95vw;
+        height: 30vh;
+    }
+    .imagenRecomendaciones{
+
+        aspect-ratio: 1.5/1;
     }
   }
   @media (max-width: 480px) {
@@ -65,10 +70,11 @@
         flex-direction: column;
         align-items: center;
         width: 140vw;
-        height: 60vh;
+        height: 65vh;
     }
     .divCardRecomendaciones{
         width: 130vw;
+        height: 40vh;
         margin-top: -25px;
         margin-bottom: 10px;
     }

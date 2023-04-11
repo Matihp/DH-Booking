@@ -12,8 +12,11 @@
 }
 @media (max-width: 768px) {
     .containerCategorias{
+        width: 101vw;
+    }
+    .containerCategorias{
         justify-content: end;
-        height: 54vh;
+        height: 59vh;
     }
     .divCategorias{
         display: grid;
@@ -22,10 +25,10 @@
   }
   @media (max-width: 480px) {
     .containerCategorias{
-        width: 158vw;
+        width: 164vw;
         display: flex;
         justify-content: center;
-        height: 150vh;
+        height: 160vh;
     }
     .divCategorias{
         display: flex;

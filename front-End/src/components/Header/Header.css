@@ -65,8 +65,11 @@
     .headerText{
         display: none;
     }
+    .header{
+        width: 92vw;
+    }
     .divContainer{
-        width: 100vw;
+        width: 96vw;
     }
     .svgHeader2{
         margin-left: 75px;
@@ -95,7 +98,7 @@
     }
     .header{
         z-index: 10;
-        width: 150vw;
+        width: 150.5vw;
     }
     .h4Header{
         width: 30vw;
