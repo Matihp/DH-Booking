@@ -13,6 +13,7 @@ import endpoint from '../../utils/endpoint.json';
 const CardProductDetails = () => {
   const [slider, setSlider] = useState(false);
   const [value, setValue] = useState([])
+  const [number,setNumber]=useState([135,136,137,138,139,140,141,142,143,115,116,117,118,119])
   const weekDays = ["D", "L", "M", "M", "J", "V", "S"];
   const months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
   const navigate=useNavigate()
@@ -23,7 +24,7 @@ const CardProductDetails = () => {
   const [prod, setProd] = useState()
 
   function redirect(){
-    if(!data.valid){//data.token==''
+    if(data==false || data.valid==false){//data.token==''
         setValidateLogin(true)
         navigate('/login')
     }else{
@@ -215,12 +216,12 @@ const CardProductDetails = () => {
             disableYearPicker
             minDate={new Date()}
             mapDays={({ date }) => {
-              let isWeekend = [0, 6].includes(date.weekDay.index)
+              let isWeekend = number.includes(date.dayOfYear)
               
               if (isWeekend) return {
                 disabled: true,
                 style: { color: "#ccc" },
-                onClick: () => alert("weekends are disabled")
+                onClick: () => alert("La fecha no esta disponible")
               }
             }}
           />
@@ -246,13 +247,10 @@ const CardProductDetails = () => {
                  <p style={{color:'black',fontWeight:'600'}}>Agrega tus fechas de viaje para obtener precios exactos</p>
                   <button onClick={redirect} className="btnProduct">Iniciar reserva</button>
             </div> 
-          </div>
-          
+          </div>       
           </div>  
-        </div>
-        
-      </div>
-      
+        </div>        
+      </div>      
       {slider && (
         <div className="slider">
           <ProductSlider product={prod}/>

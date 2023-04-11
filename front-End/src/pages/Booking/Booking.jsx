@@ -12,6 +12,7 @@ import timesInput from '../../utils/times.json';
 import endpoint from '../../utils/endpoint.json';
 import { useNavigate } from "react-router-dom";
 import DateObject from "react-date-object";
+import Swal from "sweetalert2";
 
 const Booking = () => {
   const [value, setValue] = useState([]);
@@ -19,20 +20,19 @@ const Booking = () => {
   const {time, data, succes, setSucces}=useGlobalStates();
   const [error,setError]=useState(false);
   const [fecha,setFecha]=useState([])
-  const [dates,setDates]=useState([113,118,119,125,130])
+  const [dates,setDates]=useState([135,136,137,138,139,140,141,142,143,115,116,117,118,119])
   const weekDays = ["D", "L", "M", "M", "J", "V", "S"];
   const months = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre",];
   const navigate = useNavigate()
 
   const {id}=useParams();
 
-
   function handleChange(value) {
     setValue(value);
   }
   function handleClick(){
-    console.log(fecha)
-    getFecha()
+    // console.log(fecha)
+    // getFecha()
     const reserva = {
       fechaInicio:(`${value[0].year}-${value[0].month.number}-${value[0].day}`),
       fechaFinal:(`${value[1].year}-${value[1].month.number}-${value[1].day}`),
@@ -60,11 +60,21 @@ const Booking = () => {
       })
       .catch((err) => {
         console.log(err);
-        setError(true);
+        
       })
+    }else{
+      mostrarAlerta()
     }  
   }
-  
+  const mostrarAlerta = () => {
+    Swal.fire({
+        title:"FECHAS VACIAS",
+        text:"Falta seleccionar las fechas",
+        icon:'warning',
+        timer:'25000',
+        confirmButtonColor: "#F0572D"
+    })
+}
   useEffect(() => {
     axios.get(`${endpoint.url}/productos/${id}`)
     .then(res=> setProduct(res.data))
@@ -148,6 +158,28 @@ const Booking = () => {
                       disabled: true,
                       style: { color: "#ccc" },
                       onClick: () => alert("weekends are disabled")
+                    }
+                  }}
+                />
+              </div>
+              <div className="mobileBookingCalendar">
+              <Calendar
+                  value={value}
+                  onChange={handleChange}
+                  weekDays={weekDays}
+                  months={months}
+                  numberOfMonths={1}
+                  range
+                  disableMonthPicker
+                  disableYearPicker
+                  minDate={new Date()}
+                  mapDays={({ date }) => {
+                    let isWeekend = dates.includes(date.dayOfYear)
+                    // console.log(date)
+                    if (isWeekend) return {
+                      disabled: true,
+                      style: { color: "#ccc" },
+                      onClick: () => alert("La fecha no esta disponible")
                     }
                   }}
                 />
