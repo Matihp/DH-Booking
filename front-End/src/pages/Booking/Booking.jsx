@@ -11,22 +11,28 @@ import { useGlobalStates } from "../../context/GlobalContext";
 import timesInput from '../../utils/times.json';
 import endpoint from '../../utils/endpoint.json';
 import { useNavigate } from "react-router-dom";
+import DateObject from "react-date-object";
 
 const Booking = () => {
   const [value, setValue] = useState([]);
   const [product,setProduct]=useState();
   const {time, data, succes, setSucces}=useGlobalStates();
   const [error,setError]=useState(false);
+  const [fecha,setFecha]=useState([])
+  const [dates,setDates]=useState([113,118,119,125,130])
   const weekDays = ["D", "L", "M", "M", "J", "V", "S"];
   const months = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre",];
   const navigate = useNavigate()
 
   const {id}=useParams();
 
+
   function handleChange(value) {
     setValue(value);
   }
   function handleClick(){
+    console.log(fecha)
+    getFecha()
     const reserva = {
       fechaInicio:(`${value[0].year}-${value[0].month.number}-${value[0].day}`),
       fechaFinal:(`${value[1].year}-${value[1].month.number}-${value[1].day}`),
@@ -58,15 +64,31 @@ const Booking = () => {
       })
     }  
   }
+  
   useEffect(() => {
     axios.get(`${endpoint.url}/productos/${id}`)
     .then(res=> setProduct(res.data))
   }, [])
+  useEffect(()=>{
+    axios.get(`${endpoint.url}/reservas/producto/${id}`)
+    .then(res=> {setFecha(res.data)})
+  },[])
+  function getFecha(){
+    let fechaInicio = new Date(fecha[0].fechaInicio);
+    let fechaFin  = new Date(fecha[0].fechaFinal);
+  //   while(fechaFin.getTime() >= fechaInicio.getTime()){
+  //     fechaInicio.setDate(fechaInicio.getDate() + 1);
+  //     const hola =fechaInicio.getFullYear() + '/' + (fechaInicio.getMonth() + 1) + '/' + fechaInicio.getDate();
+  //     let fi=new DateObject(hola)
+  //     setDates([... dates , fi.dayOfYear])
+  // }
+    
+  }
   return (
     <>
       <Header onChange={"home"} />
       <div className="containerBooking">
-        <div className="containerProductName">
+        <div className="containerProductBooking">
           <div style={{ width: "100vw" }}>
             <p>{product?.categoria?.titulo}</p>
             <h1>{product?.titulo}</h1>
@@ -119,6 +141,15 @@ const Booking = () => {
                   disableMonthPicker
                   disableYearPicker
                   minDate={new Date()}
+                  mapDays={({ date }) => {
+                    let isWeekend = dates.includes(date.dayOfYear)
+                    // console.log(date)
+                    if (isWeekend) return {
+                      disabled: true,
+                      style: { color: "#ccc" },
+                      onClick: () => alert("weekends are disabled")
+                    }
+                  }}
                 />
               </div>
             </div>
