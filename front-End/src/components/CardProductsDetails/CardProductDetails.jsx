@@ -24,7 +24,7 @@ const CardProductDetails = () => {
   const [prod, setProd] = useState()
 
   function redirect(){
-    if(data==false || data.valid==false){//data.token==''
+    if(data==false || data.valid==false){
         setValidateLogin(true)
         navigate('/login')
     }else{
@@ -38,8 +38,6 @@ const CardProductDetails = () => {
   const handleClick = () => {
     setSlider(!slider);
   };
-
-  
 
   useEffect(() => {
     axios.get(`${endpoint.url}/productos/${id}`)

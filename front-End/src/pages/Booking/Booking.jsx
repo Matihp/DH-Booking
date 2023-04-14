@@ -17,7 +17,7 @@ import Swal from "sweetalert2";
 const Booking = () => {
   const [value, setValue] = useState([]);
   const [product,setProduct]=useState();
-  const {time, data, succes, setSucces}=useGlobalStates();
+  const {time, data, setSucces}=useGlobalStates();
   const [error,setError]=useState(false);
   const [fecha,setFecha]=useState([])
   const [dates,setDates]=useState([135,136,137,138,139,140,141,142,143,115,116,117,118,119])
@@ -31,7 +31,6 @@ const Booking = () => {
     setValue(value);
   }
   function handleClick(){
-    // console.log(fecha)
     // getFecha()
     const reserva = {
       fechaInicio:(`${value[0].year}-${value[0].month.number}-${value[0].day}`),
@@ -60,7 +59,6 @@ const Booking = () => {
       })
       .catch((err) => {
         console.log(err);
-        
       })
     }else{
       mostrarAlerta()
@@ -153,11 +151,10 @@ const Booking = () => {
                   minDate={new Date()}
                   mapDays={({ date }) => {
                     let isWeekend = dates.includes(date.dayOfYear)
-                    // console.log(date)
                     if (isWeekend) return {
                       disabled: true,
                       style: { color: "#ccc" },
-                      onClick: () => alert("weekends are disabled")
+                      onClick: () => alert("Esta fecha no esta disponible")
                     }
                   }}
                 />
