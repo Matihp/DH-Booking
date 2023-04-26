@@ -46,6 +46,11 @@
     color: #755d55;
     /* Este es el datePicker */
 }
+@media (min-width: 1919px) {
+    .rmdp-input{
+        width: 31vw;
+    }
+}
 @media (max-width: 768px) {
     .navBar{
         width: 100vw;

@@ -40,7 +40,7 @@ const Navbar = () => {
     <form className='formNavbar'>
       <Dropdown data={ciudad} value={'city'}/>
         <DatePicker
-          placeholder="Check in - Check out"
+          placeholder="  📅 Check in - Check out"
           style={{height:'35px',border:'none',fontWeight:'900'}}
           range
           onChange={handleChange}

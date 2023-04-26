@@ -31,6 +31,11 @@ button{
 .logoSesion{
     display: none;
 }
+@media (min-width: 1919px) {
+    .divSesion{
+        width: 31vw;
+    }
+}
 @media (max-width: 768px) {
     .divSesion{
         width: 160vw;
