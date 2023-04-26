@@ -1,12 +1,16 @@
 ## DigitalBooking - Proyecto Integrador
 
-- **Descripción:** 
-El proyecto se trata de la elaboración de una aplicación para ofrecer servicios de alojamiento, empleando los aprendizajes adquiridos durante la primera fase de la formación.
- La página cuenta con una opción de búsqueda para encontrar alojamientos por categoría, ciudad o fecha, lo que hace que el proceso de selección de alojamiento sea rápido y fácil.
- Además, los usuarios pueden registrarse como usuarios o administradores, lo que les brinda diferentes niveles de acceso a la página, como la posibilidad de hacer reservas y generar nuevos alojamientos. Para hacer una reserva, los usuarios deben estar registrados e iniciar sesión en el sistema.En cambio, los administradores pueden crear nuevos alojamientos a través de un panel de administración, lo que permite la expansión continua de la base de datos de alojamientos.
- El proyecto fue llevado a cabo utilizando metodologías ágiles, lo que permitió al equipo trabajar de manera eficiente y cumplir con los plazos establecidos para la finalización del proyecto. Cada miembro del equipo desempeñó un papel específico, como desarrollador de backend, infraestructura, desarrollador de frontend,  y testing.
+**Descripción:** 
+- Este proyecto se trata de la elaboración de una aplicación para ofrecer servicios de alojamiento, empleando los aprendizajes adquiridos durante la primera fase de la formación.
+
+- La página cuenta con una opción de búsqueda para encontrar alojamientos por categoría, ciudad o fecha, lo que hace que el proceso de selección de alojamiento sea rápido y fácil.
+
+- Además, los clientes pueden registrarse como usuarios o administradores, lo que les brinda diferentes niveles de acceso a la página, como la posibilidad de hacer reservas y generar nuevos alojamientos. Para hacer una reserva, los usuarios deben estar registrados e iniciar sesión en el sistema.En cambio, los administradores pueden crear nuevos alojamientos a través de un panel de administración, lo que permite la expansión continua de la base de datos de alojamientos.
+
+- El proyecto fue llevado a cabo utilizando metodologías ágiles, lo que permitió al equipo trabajar de manera eficiente y cumplir con los plazos establecidos para la finalización del proyecto. Cada miembro del equipo desempeñó un papel específico, como desarrollador de backend, infraestructura, desarrollador de frontend y testing.
 
 ## Equipo
+
 - **Celina Véliz**
 
 - **José Zamora**
@@ -49,6 +53,30 @@ $ npm run dev
  2- Dirigirse al archivo FullSecurityApplication.java ubicado en la carpeta src.
  
  3- Ejecutar el botón de RUN situado en la interfaz del IntelliJ.
+ 
+**Infraestructura**
+
+- Diagrama de arquitectura para el despliegue en amazon:
+
+<img src="AwsInfra.jpg" alt="Diagrama para el despliegue en AWS" width="700" height="390">
+
+**Base de datos**
+
+- Diagrama entidad relación en MySQL:
+
+<img src="MySQL-Schema.png" alt="Esquema gráfico de AWS" width="700" height="600">
+
+**Marketing**
+
+- Video publicitario:
+
+https://user-images.githubusercontent.com/105994663/233223335-02d6df9d-64b8-4d96-a1c2-f7f83637acd4.mp4
+
+- Diseño de logotipo:
+
+
+![IMG-20230319-WA0000](https://user-images.githubusercontent.com/105994663/233223694-c362754b-1e73-43e9-8db6-50f5b39d2b9c.jpg)
+
 
 
 ## Tecnologías
