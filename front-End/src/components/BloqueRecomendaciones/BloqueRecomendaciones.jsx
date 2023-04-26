@@ -13,7 +13,8 @@ const BloqueRecomendaciones = () => {
   const [filterRecomend,setFilterRecomend]=useState([])
   const [filterRecomendation,setFilterRecomendation]=useState([])
   const [valid,setValid]=useState(false);
-
+  const [isReady,setIsReady]=useState(false)
+  const [loading,setLoading]=useState(true)
 
   useEffect(() =>  {
     loadRecomendaciones()
@@ -39,15 +40,23 @@ const BloqueRecomendaciones = () => {
   },[pressCategory])
 
   const loadRecomendaciones = async () => {
+    try {
       const data = await axios.get(`${endpoint.url}/productos/random`)
+      setLoading(false)
+      setIsReady(true)
       setRecomendacion(data.data)
+     } catch (err) {
+         return setLoading(true)
+     }
+    
   }
 
   return (
   <div>
     <h2 style={{ marginLeft: "30px",marginTop:'20px' }}>{category == null && !valid != '' ? 'Recomendaciones' : 'Resultados de busqueda'}</h2>
     <div className='contenedorRecomendaciones'>
-      <div className='divRecomendaciones'>
+      {isReady && (
+        <div className='divRecomendaciones'>
         {valid && cities !== null && (
 
           filterRecomendation?.map(recomendacion => <CardBloqueRecomendaciones key={recomendacion.id} recomendacion={recomendacion}/>)
@@ -63,6 +72,16 @@ const BloqueRecomendaciones = () => {
           )
         }
       </div>
+      )}
+      {
+        loading && (
+          <div className='containerLoader'>
+          <span className='loader loader-circles'></span>
+          Cargando...
+        </div>
+        )
+      }
+      
     </div>
 </div>
   )

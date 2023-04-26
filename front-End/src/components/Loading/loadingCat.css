@@ -1,0 +1,52 @@
+.containerLoading{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 99vw;
+}
+.cardLoading {
+    cursor: pointer;
+    width: 23vw;
+    background: #ffff;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+  }
+  
+  .loadingImg {
+    width: 100%;
+    aspect-ratio: 1.5/1;
+    background: linear-gradient(90deg,#e5e5e5 30%,#f0f0f0 38%,#f0f0f0 40%,#e5e5e5 48%);
+    border-radius: 7px 7px 0px 0px;
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    animation: load 3s infinite;
+  }
+  
+  .loadingTitle {
+    width: 130px;
+    height: 3.2vh;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    background: linear-gradient(90deg,#e5e5e5 30%,#f0f0f0 38%,#f0f0f0 40%,#e5e5e5 48%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    animation: load 3s infinite;
+  }
+  
+  .loadingDescrip {
+    width: 295px;
+    height: 3vh;
+    margin:6px 0px 10px 10px;
+    border-radius: 5px;
+    background: linear-gradient(90deg,#e5e5e5 30%,#f0f0f0 38%,#f0f0f0 40%,#e5e5e5 48%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    animation: load 3s infinite;
+  }
+  
+  @keyframes load {
+    100% {
+      background-position: -100% 0;
+    }
+  }

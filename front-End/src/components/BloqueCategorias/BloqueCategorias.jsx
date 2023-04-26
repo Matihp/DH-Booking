@@ -5,21 +5,30 @@ import axios from 'axios'
 import { useEffect,useState } from 'react'
 import endpoint from '../../utils/endpoint.json'
 import { useGlobalStates } from '../../context/GlobalContext'
+import LoadingCat from '../Loading/LoadingCat'
 
 const BloqueCategorias = () => {
 
     const [categoria, setCategoria] = useState([])
     const {categorias, setCategorias} = useGlobalStates()
-    
+    const [isReady,setIsReady]=useState(false)
+    const [loading,setLoading]=useState(true)
 
     useEffect(() =>  {
         loadCategorias()
     }, [])
 
     const loadCategorias = async () => {
-        const data = await axios.get(`${endpoint.url}/categorias`)
-        setCategoria(data.data)
-        setCategorias(data.data)
+        try {
+           const data = await axios.get(`${endpoint.url}/categorias`)
+           setLoading(false)
+           setIsReady(true)
+           setCategoria(data.data)
+           setCategorias(data.data)
+          } catch (err) {
+            return setLoading(true)
+          }
+        
     }
     
     return (
@@ -29,9 +38,18 @@ const BloqueCategorias = () => {
             </span>
             <div className='containerCategorias'>
                 <div className='divCategorias'>
-                {
-                    categoria?.map(categoria => <CardBloqueCategorias key={categoria.id} categoria={categoria} />)
-                }
+                    {
+                        isReady && (
+
+                         categoria?.map(categoria => <CardBloqueCategorias key={categoria.id} categoria={categoria} />)   
+
+                        )
+                    }
+                    {
+                        loading && (    
+                           <LoadingCat/> 
+                        )
+                    }
                  </div>
             </div>
             
