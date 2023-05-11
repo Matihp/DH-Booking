@@ -1,4 +1,5 @@
 {
-    "url" : "http://localhost:8080",
-    "urlAws":"3.137.136.152:8080"
+    "url" : "https://travel-java-production.up.railway.app",
+    "urlAws":"3.137.136.152:8080",
+    "urlLocalhost":"http://localhost:8080"
 }
