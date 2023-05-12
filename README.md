@@ -11,15 +11,15 @@
 
 ## Equipo
 
-- **Celina Véliz**
+- **Celina Véliz (Infraestructura)**
 
-- **José Zamora**
+- **José Zamora (Desarrollador de Frontend)**
 
-- **Matias Contreras**
+- **Matias Contreras (Desarrollador de Frontend)**
 
-- **Nicolás Condezo**
+- **Nicolás Condezo (Testing)**
 
-- **Tomas Rodríguez**
+- **Tomas Rodríguez (Desarrollador de Backend)**
 
 ## Desarollo
 
